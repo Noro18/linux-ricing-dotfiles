@@ -56,6 +56,19 @@ Switch between Waybar configs stored in `~/.config/waybar/custom styles`.
 
 </details>
 
-For more detailed explanation on how Everything works check out ...
+For more detailed explanation on how Everything works check out
 
+## 📚 Documentation
+
+- [Architecture Overview](docs/architecture.md)
+- [File Structure](docs/file-structure.md)
+- [Theming Pipeline](docs/theming-pipeline.md)
+- [Scripts Reference](docs/scripts.md)
+
+### Components
+- [Waybar](docs/components/waybar.md)
+- [Rofi](docs/components/rofi.md)
+- [Hyprland](docs/components/hyprland.md)
+- [Kitty](docs/components/kitty.md)
+- [Fastfetch](docs/components/fastfetch.md)
 
