@@ -1,0 +1,18 @@
+
+check_contrast = true 
+# saturation = 55
+
+backend="wal"
+# color_space = "lch-mixed"
+
+[templates]
+# NOTE: prefer '' over "" for paths, avoids escaping.
+# template: A RELATIVE path that points to `~/.config/wallust/template` (depends on platform)
+# target: ABSOLUTE path in which to place a file with generated templated values.
+# ¡ If either one is a directory, then both SHOULD be one. !
+# zathura = { template = 'zathura', target = '~/.config/zathura/zathurarc' }
+
+vscode = { src = 'vscode.json', dst = '~/.cache/wallust/colors.json' }
+vscode2 = { src = 'vscode', dst = '~/.cache/wallust/colors' }
+
+kitty = { src='kitty.conf', dst='~/.cache/wallust/colors-kitty.conf'}

@@ -1,0 +1,312 @@
+/* ============================================================
+   Global Reset & Base Styles
+   ============================================================ */
+
+   * {
+    margin:      0px;
+    /* padding:     1px 1px; */
+    border:      none;
+    font-family: "JetBrains Nerd Font", "Helvetica Neue", Arial, sans-serif;
+    font-size:   14px;
+}
+
+
+/* ============================================================
+   Window
+   ============================================================ */
+
+window#waybar {
+    background-color:    alpha(@surface_containerest, 0.0);
+    transition-property: background-color;
+    transition-duration: 0.5s;
+}
+
+/* Fade bar when a window goes fullscreen */
+win0ow#waybar.hidden {
+    opacity: 0.2;
+}
+
+
+/* ============================================================
+   Module Groups (left / center / right)
+   ============================================================ */
+
+.modules-left,
+.modules-center,
+.modules-right {
+    padding: 0px 0px;
+}
+
+
+/* ============================================================
+   Generic Module Label
+   ============================================================ */
+
+label.module {
+    color:       @primary;
+    font-weight: bold;
+    padding:     0px 12px;
+}
+
+box.module button:hover {
+    box-shadow: inset 0 -2px @primary;
+}
+
+
+/* ============================================================
+   Tooltip
+   ============================================================ */
+
+tooltip {
+    background:    rgba(43, 48, 59, 0.92);
+    border:        1px solid rgba(100, 114, 125, 0.5);
+    border-radius: 8px;
+}
+
+tooltip label {
+    color:   @on_secondary;
+    padding: 2px 6px;
+}
+
+
+/* ============================================================
+   Workspaces
+   ============================================================ */
+
+#workspaces {
+    background:    alpha(@surface_container, 1);
+    color:         @on_primary_fixed;
+    padding:       6px;
+    border-radius: 17px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border:        2px solid @color7;
+    border-top:        0px solid @color7;
+}
+
+#workspaces button {
+    padding:       0px 11px;
+    margin:        2px;
+    color:         @on_surface;
+    border-radius: 100px;
+    /* cubic-bezier gives a snappier, more physical feel than plain ease */
+    transition:
+        background 0.25s cubic-bezier(0.4, 0.0, 0.2, 1),
+        color      0.25s cubic-bezier(0.4, 0.0, 0.2, 1),
+        padding    0.2s  cubic-bezier(0.4, 0.0, 0.2, 1),
+        box-shadow 0.25s cubic-bezier(0.4, 0.0, 0.2, 1),
+        transform  0.15s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+#workspaces button:hover {
+    color:      @primary;
+    background: @on_primary_fixed_variant;
+    box-shadow: inset 0 -2px @primary;
+}
+
+#workspaces button.active {
+    padding:       0px 15px;
+    margin:        2px;
+    background:    @color6;
+    color:         @on_primary_fixed;
+    border-radius: 100px;
+    box-shadow:    inset 0 -2px alpha(@on_primary_fixed, 0.5);
+}
+
+#workspaces button.urgent {
+    background: alpha(@error, 0.8);
+    color:      @on_primary_fixed;
+}
+
+
+/* ============================================================
+   Right-side Module Defaults
+   ============================================================ */
+
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#backlight,
+#tray,
+#custom-swaync,
+#custom-temperature,
+#custom-light {
+    color:            @color7;
+    padding:          0px 10px;
+    margin:           0px;
+    border-radius:    50px;
+    background-color: alpha(@surface_container, 1);
+    transition:
+        background-color 0.25s ease,
+        color            0.25s ease,
+        box-shadow       0.05s ease;
+    
+    border:        2px solid @color7;
+    border-top:        0px solid @color7;
+}
+
+/* Subtle underline glow on hover */
+#clock:hover,
+#battery:hover,
+#pulseaudio:hover,
+#network:hover,
+#backlight:hover,
+#custom-swaync:hover,
+#tray:hover,
+#custom-temperature:hover,
+#custom-light:hover {
+    box-shadow: inset 0 -2px @primary;
+    color:      @primary;
+}
+
+
+/* ============================================================
+   Individual Module Overrides
+   ============================================================ */
+
+
+
+#battery {
+    border-top-left-radius:    0;
+    border-top-right-radius:    0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+#battery.charging {
+    color: @primary;
+}
+
+#battery.warning:not(.charging) {
+    color: @error;
+}
+
+#custom-swaync {
+    border-top-left-radius:    0;
+    border-top-right-radius:    0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+#tray {
+    border-top-left-radius:    0;
+    border-top-right-radius:    0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+/* --- Grouped pair: Temperature (left) + Light (right) --- */
+
+#clock {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+#custom-temperature {
+    border-top-right-radius:        0;
+    border-top-left-radius:         0;
+    border-bottom-left-radius:      0;
+    border-bottom-right-radius:     0;
+    margin-right:                   0px;
+    border-left: 0px;
+    border-right: 0px;
+ 
+}
+
+#custom-light {
+    border-top-left-radius:    0;
+    padding-right:               30px;
+    border-top-right-radius:    0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 18;
+    margin-right:               10px;
+    border-left: 0px;
+
+
+}
+
+/* --- Grouped pair: Backlight (left) + PulseAudio (right) --- */
+
+#backlight {
+    border-top-right-radius:    0;
+    border-top-left-radius:    0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 18;
+    margin-right:               0px;
+    border-right: 0px;
+
+}
+
+#pulseaudio {
+    border-top-left-radius:    0;
+    border-top-right-radius:    0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-left:               0px;
+    border-left: 0px;
+    border-right: 0px;
+   
+}
+
+#pulseaudio.muted {
+    color: alpha(@color7, 0.4);
+}
+
+
+/* ============================================================
+   Clock Tooltip (fade-in on hover)
+   ============================================================ */
+
+#clock.tooltip {
+    opacity:    0;
+    transition: opacity 0.3s ease;
+}
+
+#clock:hover .tooltip {
+    opacity: 1;
+}
+
+
+/* ============================================================
+   Cava Visualizer
+   ============================================================ */
+
+#cava {
+    margin:  0px;
+    padding: 0px;
+    color:   @primary;
+}
+
+
+/* ============================================================
+   Window Title
+   ============================================================ */
+
+#window {
+    color:       white;
+    font-weight: bold;
+}
+
+
+/* ============================================================
+   Animations
+   ============================================================ */
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color:            black;
+    }
+}
+

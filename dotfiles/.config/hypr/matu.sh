@@ -1,0 +1,1 @@
+/home/noro18/.cargo/bin/matugen image ~/.config/wallpapers/blue.jpg

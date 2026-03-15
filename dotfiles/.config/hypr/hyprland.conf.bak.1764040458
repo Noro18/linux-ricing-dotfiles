@@ -1,0 +1,226 @@
+# Thi a example Hyprland config file.
+#
+# Refer to the wiki for more information.
+#
+# Please note not all available settings / options are set here.
+
+# For a full list, see the wik
+#
+
+# See https://wiki.hyprland.org/Configuring/Monitors/
+
+monitor = eDP-1, 1920x1080@60, 0x0, 1  
+monitor = HDMI-A-1, 1920x1080@60, 0x0, 1, mirror, eDP-1  
+
+
+# See https://wiki.hyprland.org/Configuring/Keywords/ for more
+
+# Execute your favorite apps at launch
+exec-once = hyprpaper &
+exec-once = setxkbmap -option compose:ralt
+exec-once = hyprsunset & hyprctl hyprsunset off
+exec-once = waybar & nm-applet --indicator & swaync
+exec-once = waypaper --restore
+exec-once = hypridle
+exec-once = battery_monitor &
+exec-once = /usr/lib/polkit-kde-authentication-agent-1
+exec-once = /usr/bin/gnome-keyring-daemon --start --components=secrets
+exec-once = wallset-backend-startup
+exec-once = autostart_kitty
+
+
+# Source a file (multi-file configs)
+source = ~/.config/hypr/colors/colors.conf
+
+# Some default env vars.
+env = XCURSOR_SIZE,24
+env = XDG_MENU_PREFIX,arch-
+env = XCURSOR_THEME, breeze
+env = XCURSOR_SIZE, 24
+# For KVM virtual machines
+env = WLR_NO_HARDWARE_CURSORS, 1
+env = WLR_RENDERER_ALLOW_SOFTWARE, 1
+
+# For all categories, see https://wiki.hyprland.org/Configuring/Variables/
+input {
+    kb_layout = us
+    kb_variant =
+    kb_model =
+    kb_options = compose:ralt
+    kb_rules =
+
+    follow_mouse = 1
+
+    touchpad {
+        natural_scroll = true
+    }
+
+    sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
+}
+
+general {
+    # See https://wiki.hyprland.org/Configuring/Variables/ for more
+
+    gaps_in = 5
+    gaps_out = 10
+    border_size = 2
+    col.active_border = $primary $secondary_fixed
+    col.inactive_border = rgba(595959aa)
+    layout = dwindle
+}
+
+decoration {
+    # See https://wiki.hyprland.org/Configuring/Variables/ for more
+
+    rounding = 5
+
+    blur {
+        enabled = true
+        size = 4
+        passes = 4
+        xray = true
+    }
+layerrule = blur, waybar
+# layerrule = ignorezero, waybar
+  
+    
+    
+    
+}
+
+windowrule = opacity 0.7 override, class:Code
+animations {
+    enabled = true
+
+    # Some default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
+
+    bezier = myBezier, 0.05, 0.9, 0.1, 1.05
+
+    animation = windows, 1, 7, myBezier
+    animation = windowsOut, 1, 7, default, popin 80%
+    animation = border, 1, 10, default
+    animation = borderangle, 1, 8, default
+    animation = fade, 1, 7, default
+    animation = workspaces, 1, 6, default
+}
+
+dwindle {
+    # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
+    pseudotile = true # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+    preserve_split = true # you probably want this
+}
+
+master {
+    # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
+   
+}
+
+gestures {
+    # See https://wiki.hyprland.org/Configuring/Variables/ for more
+  
+}
+
+misc {
+    # See https://wiki.hyprland.org/Configuring/Variables/ for more
+    disable_hyprland_logo = true
+    disable_splash_rendering = true
+}
+
+# Example per-device config
+# See https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs for more
+
+# Example windowrule v1
+# windowrule = float, kitty)$
+# Example windowrule v2
+# windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
+# See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
+
+# See https://wiki.hyprland.org/Configuring/Keywords/ for more
+$mainMod = SUPER  
+
+# Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
+# bind = $mainMod, Q, exec, kitty
+bind = $mainMod, RETURN, exec, kitty
+# bind = $mainMod, C, killactive,
+bind = $mainMod, Q, killactive,
+bind = $mainMod, M, exit,
+bind = $mainMod, E, exec, dolphin
+# bind = $mainMod, V, togglefloating,
+bind = $mainMod, T, togglefloating, 
+bind = $mainMod, F, fullscreen
+bind = $mainMod, SPACE, exec, pkill rofi || .config/rofi/launchers/type-1/launcher.sh
+bind = $mainMod, P, exec, pkill rofi || battery # dwindle
+bind = $mainMod, J, togglesplit, # dwindle
+bind = $mainMod, B, exec, chromium
+bind = $mainMod, V, exec, code
+
+# Move focus with mainMod + arrow keys
+bind = $mainMod, left, movefocus, l
+bind = $mainMod, right, movefocus, r
+bind = $mainMod, up, movefocus, u
+bind = $mainMod, down, movefocus, d
+
+# Switch workspaces with mainMod + [0-9]
+bind = $mainMod, 1, workspace, 1
+bind = $mainMod, 2, workspace, 2
+bind = $mainMod, 3, workspace, 3
+bind = $mainMod, 4, workspace, 4
+bind = $mainMod, 5, workspace, 5
+bind = $mainMod, 6, workspace, 6
+bind = $mainMod, 7, workspace, 7
+bind = $mainMod, 8, workspace, 8
+bind = $mainMod, 9, workspace, 9
+bind = $mainMod, 0, workspace, 10
+
+# Move active window to a workspace with mainMod + SHIFT + [0-9]
+bind = $mainMod SHIFT, 1, movetoworkspace, 1
+bind = $mainMod SHIFT, 2, movetoworkspace, 2
+bind = $mainMod SHIFT, 3, movetoworkspace, 3
+bind = $mainMod SHIFT, 4, movetoworkspace, 4
+bind = $mainMod SHIFT, 5, movetoworkspace, 5
+bind = $mainMod SHIFT, 6, movetoworkspace, 6
+bind = $mainMod SHIFT, 7, movetoworkspace, 7
+bind = $mainMod SHIFT, 8, movetoworkspace, 8
+bind = $mainMod SHIFT, 9, movetoworkspace, 9
+bind = $mainMod SHIFT, 0, movetoworkspace, 10
+
+# Scroll through existing workspaces with mainMod + scroll
+bind = $mainMod, mouse_down, workspace, e+1
+bind = $mainMod, mouse_up, workspace, e-1
+
+# Move/resize windows with mainMod + LMB/RMB and dragging
+bindm = $mainMod, mouse:272, movewindow
+bindm = $mainMod, mouse:273, resizewindow
+
+# Custom keybinds
+bind = $mainMod, R, exec, pkill waybar; waybar & # Reload Waybar
+bind = $mainMod SHIFT, R, exec, wallset-backend-startup # Reload Wallpaper
+bind = $mainMod, W, exec, pkill rofi || wallset # open wallpaper swtiher 
+bind = $mainMod SHIFT, S, exec, pkill rofi || ~/.config/rofi/applets/bin/powermenu.sh #Power menu 
+# bind = $mainMod, S, exec, swaync-client -rs # reset swaync for troubleshooting
+bind = $mainMod, L, exec, hyprlock # lock screeni
+bind = $mainMod, C, exec, open-chat-gpt
+# Screen shot keybinds
+# Screenshot (full)
+bind = , Print, exec, grim ~/Pictures/screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png && notify-send "📸 Screenshot saved!" "Saved to ~/Pictures"
+
+# Screenshot (region select)
+bind = CTRL, Print, exec, grim -g "$(slurp)" ~/Pictures/screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png && notify-send "📸 Screenshot saved!" "Area captured and saved to ~/Pictures"
+
+# Screenshot (region + edit in Swappy)
+bind = ALT, Print, exec, grim -g "$(slurp)" - | swappy -f - && notify-send "🖊 Screenshot edited" "Opened in Swappy"
+
+
+
+# Volume control (requires pamixer)
+bind = , XF86AudioRaiseVolume, exec, pamixer -i 5
+bind = , XF86AudioLowerVolume, exec, pamixer -d 5
+bind = , XF86AudioMute, exec, pamixer -t
+
+# Brightness control (requires brightnessctl)
+bind = , XF86MonBrightnessUp, exec, brightnessctl set +5%
+bind = , XF86MonBrightnessDown, exec, brightnessctl set 5%-
+
+
+
+

@@ -1,0 +1,16 @@
+check_contrast = true 
+# saturation = 55
+
+#
+# palette = "dark"
+backend="resized"
+
+color_space = "lch"
+
+[templates]
+
+
+vscode = { src = 'vscode.json', dst = '~/.cache/wallust/colors.json' }
+vscode2 = { src = 'vscode', dst = '~/.cache/wallust/colors' }
+waybar = { src = 'waybar.css', dst = '~/.config/waybar/colors-waybar.css'}
+kitty = { src='kitty.conf', dst='~/.cache/wallust/colors-kitty.conf'}

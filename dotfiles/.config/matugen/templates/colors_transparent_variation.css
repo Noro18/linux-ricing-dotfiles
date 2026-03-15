@@ -1,0 +1,17 @@
+/*
+* Css Colors
+* Generated with Matugen (with transparency)
+*/
+<* for name, value in colors *>
+    /* Original color */
+    @define-color {{name}} {{value.default.rgba}};
+
+    /* Transparent variants */
+    @define-color {{name}}_50 {{value.default.hex}}80;
+    @define-color {{name}}_30 {{value.default.hex}}4D;
+    @define-color {{name}}_70 {{value.default.hex}}B3;
+<* endfor *>
+
+{# choose alpha as fraction 0.0..1.0 #}
+
+

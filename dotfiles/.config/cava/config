@@ -1,0 +1,16 @@
+
+[general]
+live-config = 1
+
+[color]
+background = default
+gradient = 1
+gradient_count = 8
+gradient_color_1 = '#c85c68'
+gradient_color_2 = '#d78a87'
+gradient_color_3 = '#2d6388'
+gradient_color_4 = '#306a90'
+gradient_color_5 = '#3c6bb4'
+gradient_color_6 = '#b33ba5'
+gradient_color_7 = '#9bc0d0'
+gradient_color_8 = '#6c8691'

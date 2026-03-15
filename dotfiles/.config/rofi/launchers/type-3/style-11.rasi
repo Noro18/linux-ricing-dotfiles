@@ -1,0 +1,75 @@
+
+@import                          "shared/colors.rasi"
+@import                          "shared/fonts.rasi"
+1
+
+configuration{
+    font: "Noto Sans 20";
+    show-icons: true;
+    location: 5;
+    sidebar-mode: false;
+    prompt: "search: ";
+    alternate-row-color: false;
+    // background-color: rgba(221, 121, 152, 0.5);
+    fixed-height: false;
+    // alternate:false;
+    modi:                       "drun";
+    show-icons:                 true;
+    display-drun:               "";
+	drun-display-format:        "{name}";
+}
+
+
+listview{
+    spacing: 0px;
+    scrollbar: true;
+    overflow:true;
+    layout: horizontal;
+
+    background-color: transparent;
+}
+
+element-icon {
+    vertical-align: 0.0;
+    size:300px;
+
+    padding: 0px 0px;
+    margin: 0px;
+    spacing:0px 0px;
+    // background-color: rgba(221, 121, 152, 0.5);
+}
+
+
+element-text{
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    // border-radius: 4px;
+
+}
+element.alternate.normal{
+    background-color: transparent;
+}
+
+element{
+    orientation: vertical;
+    height: 0px;
+    padding: 0px;
+    margin: 0px;
+    spacing:0px;
+    overflow: true;
+}
+
+element-text selected {
+    enabled:false;
+
+    background-color: rgba(255, 255, 255, 0.8);
+    text-color: rgba(241, 90, 144, 0.8);
+}
+
+window{
+    width: 100%;
+    height: 38%;
+    background-color: rgba(241, 90, 144, 0.5);
+
+    border: 0px;
+}

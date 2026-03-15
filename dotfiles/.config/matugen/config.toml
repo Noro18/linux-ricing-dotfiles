@@ -1,0 +1,50 @@
+[color_adjustment]
+saturation = 0
+contrast = 1.5
+
+
+[config.wallpaper]
+command = "hyprpaper"
+set = false
+arguments = ["img", "--transition-type", "center"]
+
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/hyprland-colors.conf'
+output_path = '~/.config/hypr/colors/colors.conf'
+post_hook = 'hyprctl reload'
+
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/colors/colors.conf'
+
+
+[templates.rofi]
+input_path = '~/.config/matugen/templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/colors/colors-matugen.rasi'
+
+
+[templates.waybar]
+input_path = '~/.config/matugen/templates/colors.css'
+output_path = '~/.config/waybar/colors.css'
+
+
+[templates.swaync]
+input_path = '~/.config/matugen/templates/colors-swaync.css'
+output_path = '~/.config/swaync/colors-swaync.css'
+
+
+[templates.btop]
+input_path = '~/.config/matugen/templates/btop.theme'
+output_path = '~/.config/btop/themes/matugen.theme'
+
+
+[templates.starship]
+input_path = '~/.config/matugen/templates/starship-colors.toml'
+output_path = '~/.config/starship.toml'
+
+
+[templates.chrome]
+input_path = '/home/noro18/.config/matugen/templates/chromium-theme.json'
+output_path = '/home/noro18/.config/chromium/Default/Extensions/Matugen-theme/manifest.json'
+
+

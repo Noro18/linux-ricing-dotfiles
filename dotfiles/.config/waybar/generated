@@ -1,0 +1,7 @@
+
+@import "colors.css";
+/* @import url('../../.cache/wal/colors-waybar.css'); */
+@import url('../../.cache/wallust/colors-waybar.css');
+
+@import url('/home/noro18/.config/waybar/custom styles/original.css')
+

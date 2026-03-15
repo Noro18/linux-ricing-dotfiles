@@ -1,0 +1,198 @@
+
+
+* {
+    margin: 0px;
+    padding: 2px 2px;
+    border: none;
+    /* background-color: blue; */
+    /* border-radius: 100px; */
+    font-family: "JetBrains Nerd Font", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    /* min-height: 0; */
+}
+
+window#waybar {
+    background-color: alpha(@surface_container_highest, 0.0);
+}
+
+
+
+label.module {
+    color: @primary;
+    font-weight: bold;
+    padding: 0px 10px;
+}
+
+tooltip {
+  background: rgba(43, 48, 59, 0.9);
+  border: 1px solid rgba(100, 114, 125, 0.5);
+}
+tooltip label {
+  color: @on_secondary; 
+}
+
+#workspaces {
+    background: alpha(@background, 0.5);
+    
+    color: @on_primary_fixed;
+    border-radius: 100px;
+    /* margin: 0px 0px; */
+    padding: 4px;
+    border: 1px solid @on_secondary;
+    /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
+}
+
+#workspaces button {
+    /* padding: 0px 20px; */
+    padding: 0px 15px;
+    margin: 2px;
+    /* background: alpha(@surface_container_highest, 0.5); */
+    
+    color: @on_surface;
+    /* border-bottom: 3px solid transparent; */
+    border-radius: 100px;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        /* padding 0.2s ease, */
+        transform 0.2s ease; /* optional for scale effect */
+    }
+
+#workspaces button.focused {
+     padding: 4px;
+    margin: 2px;
+    background: @on_primary_container;
+    color: @on_primary_fixed;
+    /* border-bottom: 3px solid transparent; */
+    border-radius: 100px;
+}
+
+#workspaces button:hover {
+    color: @primary;
+    /* padding: 0px 10px; */
+    background: @on_primary_fixed_variant;
+    /* background: @inverse_on_surface_10; */
+}
+
+#workspaces button.active {
+    padding: 0px 15px;
+    margin: 2px;
+    background: @color6;
+    color: @on_primary_fixed;
+    /* border-bottom: 3px solid transparent; */
+    border-radius: 100px;
+}
+
+/* .modules-right {
+    color: @primary;
+    padding: 2px 15px;
+    margin: 2px;
+    border-radius: 50px;
+    background-color: alpha(@surface_container_highest, 0.5);
+} */
+
+#clock,
+#battery, 
+#pulseaudio,
+#network,
+#backlight,
+#custom-swaync,
+#tray,
+#custom-temperature,
+#custom-light{
+    color: @color7;
+    padding: 2px 15px;
+    margin: 2px;
+    border-radius: 50px;
+    
+    background-color: alpha(@background, 0.5);
+
+}
+
+#clock {
+    border: 1px solid @on_secondary;
+}
+
+#battery {
+    border: 1px solid @on_secondary;
+}
+
+
+#custom-swaync {
+    border: 1px solid @on_secondary;
+}
+
+#tray {
+    border: 1px solid @on_secondary;
+}
+
+#custom-temperature {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: 0px;
+    border-left: 1px solid @on_secondary;
+    border-top: 1px solid @on_secondary;
+    border-bottom: 1px solid @on_secondary;
+    
+}
+
+#custom-light {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: 0px;
+    border-right: 1px solid @on_secondary;
+    border-top: 1px solid @on_secondary;
+    border-bottom: 1px solid @on_secondary;
+}
+
+#backlight {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: 0px;
+    border-left: 1px solid @on_secondary;
+    border-top: 1px solid @on_secondary;
+    border-bottom: 1px solid @on_secondary;
+}
+
+#pulseaudio {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: 0px;
+    border-right: 1px solid @on_secondary;
+    border-top: 1px solid @on_secondary;
+    border-bottom: 1px solid @on_secondary;
+}
+
+/* #battery.charging {
+    color: @secondary;
+    background-color: #26A65B;
+} */
+
+#clock.tooltip {
+transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+#clock:hover .tooltip {
+    opacity: 1;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+#cava {
+    /* padding: 0px; */
+    margin: 0px;
+    color: @primary;
+    padding: 0px;
+}
+
+#window {
+    color: white;
+    font-weight: bold;
+}
+

@@ -1,0 +1,4 @@
+@define-color background-matugen {{colors.background.default.rgba}};
+<* for name, value in colors *>
+@define-color {{name}} {{value.default.rgba}};
+<* endfor *>
