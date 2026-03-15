@@ -7,18 +7,18 @@ palette = 'colors'
 
 [palettes.colors]
 mustard = '#af8700' # example
-color1 = '#d9bafa'
-color2 = '#3d2459'
-color3 = '#ccc4cf'
-color4 = '#221e24'
-color5 = '#3d2459'
-color6 = '#3d2459'
-color7 = '#151218'
-color8 = '#d9bafa'
-color9 = '#f2b7c0'
-color10 = '#270d43'
-color11 = '#543b72'
-color12 = '#362d40'
+color1 = '#afd18c'
+color2 = '#1d3702'
+color3 = '#c4c8ba'
+color4 = '#1e211a'
+color5 = '#1d3702'
+color6 = '#1d3702'
+color7 = '#11140e'
+color8 = '#afd18c'
+color9 = '#a0cfcc'
+color10 = '#0e2000'
+color11 = '#334e17'
+color12 = '#29331f'
 
 
 [username]

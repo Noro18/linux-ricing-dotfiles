@@ -13,25 +13,25 @@
 theme[main_bg]=""
 
 # Main text color
-theme[main_fg]="#e8e0e8"
+theme[main_fg]="#e2e3d9"
 
 # Title color for boxes
-theme[title]="#d9bafa"
+theme[title]="#afd18c"
 
 # Highlight color for keyboard shortcuts
-theme[hi_fg]="#f2b7c0"
+theme[hi_fg]="#a0cfcc"
 
 # Background color of selected item in processes box
-theme[selected_bg]="#d9bafa"
+theme[selected_bg]="#afd18c"
 
 # Foreground color of selected item in processes box
-theme[selected_fg]="#3d2459"
+theme[selected_fg]="#1d3702"
 
 # Color of inactive/disabled text
-theme[inactive_fg]="#ccc4cf"
+theme[inactive_fg]="#c4c8ba"
 
 # Misc colors for processes box including mini cpu graphs, details memory graph and details status text
-theme[proc_misc]="#d9bafa"
+theme[proc_misc]="#afd18c"
 
 # Cpu box outline color
 theme[cpu_box]="#ffb4ab"
@@ -43,10 +43,10 @@ theme[mem_box]="#ff891b"
 theme[net_box]="#5e78dd"
 
 # Processes box outline color
-theme[proc_box]="#958e98"
+theme[proc_box]="#8e9285"
 
 # Box divider line and small boxes line color
-theme[div_line]="#4a454e"
+theme[div_line]="#44483e"
 
 # Temperature graph colors
 theme[temp_start]="#5edd73"
@@ -59,19 +59,19 @@ theme[cpu_mid]="#d4d400"
 theme[cpu_end]="#ff0040"
 
 # Mem/Disk free meter
-theme[free_start]="#cfc1da"
-theme[free_mid]="#cfc1da"
-theme[free_end]="#4d4357"
+theme[free_start]="#bfcbad"
+theme[free_mid]="#bfcbad"
+theme[free_end]="#404a34"
 
 # Mem/Disk cached meter
-theme[cached_start]="#f2b7c0"
+theme[cached_start]="#a0cfcc"
 theme[cached_mid]=""
-theme[cached_end]="#653b42"
+theme[cached_end]="#1e4e4c"
 
 # Mem/Disk available meter
-theme[available_start]="#d9bafa"
+theme[available_start]="#afd18c"
 theme[available_mid]=""
-theme[available_end]="#543b72"
+theme[available_end]="#334e17"
 
 # Mem/Disk used meter
 theme[used_start]="#ff0040"
@@ -79,9 +79,9 @@ theme[used_mid]="#ff2060"
 theme[used_end]="#ff4080"
 
 # Download graph colors
-theme[download_start]="#cfc1da"
-theme[download_mid]="#d9bafa"
-theme[download_end]="#f2b7c0"
+theme[download_start]="#bfcbad"
+theme[download_mid]="#afd18c"
+theme[download_end]="#a0cfcc"
 
 # Upload graph colors
 theme[upload_start]="#4f88df"
