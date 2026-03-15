@@ -1,3 +1,33 @@
-dotfiles/.config/*
+# ============================================================
+#  Generated color files (overwritten on every wallpaper change)
+# ============================================================
+
+dotfiles/.config/btop/themes/matugen.theme
+dotfiles/.config/cava/config
+dotfiles/.config/hypr/colors/colors.conf
+dotfiles/.config/kitty/colors/colors.conf
+dotfiles/.config/swaync/colors-swaync.css
+dotfiles/.config/waybar/colors-waybar.css
+dotfiles/.config/waybar/colors.css
+dotfiles/.config/waybar/style.css
+dotfiles/.config/starship.toml
+
+# ============================================================
+#  Wallpapers (too large, changes constantly)
+# ============================================================
+
+dotfiles/.config/wallpapers/
+
+# ============================================================
+#  Misc clutter
+# ============================================================
+
+dotfiles/.config/fastfetch/managed_context/
+dotfiles/.config/fastfetch/test_suite_analysis/
+dotfiles/.config/hypr/managed_context/
+dotfiles/.config/hypr/test_suite_analysis/
+dotfiles/.config/rofi/applets/bin/managed_context/
+dotfiles/.config/rofi/applets/bin/test_suite_analysis/
+dotfiles/.config/hypr/*.bak*
 
 CHANGE GITIGNORE TO PSUH UPDATES
