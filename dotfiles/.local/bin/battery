@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+dir="$HOME/.config/rofi/applets/type-1/"
+theme='style-1'
+
+options="⚡ Performance|performance
+⚙️ Balanced|balanced
+🌿 Power Saving|power-saver"
+
+current=$(powerprofilesctl get)
+
+chosen=$(echo "$options" | awk -F'|' '{print $1}' | rofi -dmenu -p "Curr: $current" -theme "${dir}/${theme}.rasi")
+
+# Map chosen display name to actual value
+value=$(echo "$options" | awk -F'|' -v choice="$chosen" '$1==choice {print $2}')
+
+if [ -n "$chosen" ]; then
+  powerprofilesctl set $value
+  notify-send "Power Profile set to $chosen"
+fi

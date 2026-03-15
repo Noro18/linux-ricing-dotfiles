@@ -1,0 +1,4 @@
+#!/bin/zsh
+# This script open chat gpt using chromium
+chromium --app=https://chat.openai.com
+

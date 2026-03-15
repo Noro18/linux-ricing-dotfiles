@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+
+# === Configuration ===
+WALLPAPER_DIR="$HOME/.config/wallpapers"
+MONITOR="eDP-1"
+HYPR_CONF="$HOME/.config/hypr/hyprpaper.conf"
+LAST_FILE="$HOME/.cache/last_wallpaper"  # remembers last wallpaper
+CACHE="$HOME/.cache/wallpapers_list.txt" # cached list of wallpapers
+
+export PATH="$HOME/anaconda3/bin:/usr/local/bin:/usr/bin:$PATH"
+
+# === Build cached file list (symlink-safe) ===
+if [ ! -f "$CACHE" ] || [ "$(find -L "$WALLPAPER_DIR" -type f | wc -l)" -ne "$(wc -l <"$CACHE")" ]; then
+  echo "Building wallpaper cache..."
+  find -L "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) >"$CACHE"
+fi
+
+# === Load wallpaper list ===
+mapfile -t FILES <"$CACHE"
+
+if [ ${#FILES[@]} -eq 0 ]; then
+  # notify-send "No images found in $WALLPAPER_DIR"
+  exit 1
+fi
+
+# === Load last wallpaper ===
+LAST=""
+[ -f "$LAST_FILE" ] && LAST=$(<"$LAST_FILE")
+
+# === Pick a random wallpaper, not same as last ===
+while :; do
+  FILE="${FILES[RANDOM % ${#FILES[@]}]}"
+  [ "$FILE" != "$LAST" ] && break
+done
+
+# === Save current wallpaper as last ===
+echo "$FILE" >"$LAST_FILE"
+
+swww img "$FILE" \
+  --transition-type any \
+  --transition-duration 0.9 \
+  --transition-fps 60
+#  --transition-step 50
+
+# === Apply wallpaper and generate theme ===
+/home/noro18/anaconda3/bin/wal --saturate 0.5 -a 0.8 -i "$FILE" -s
+wallust run "$FILE"
+
+/home/noro18/.cargo/bin/matugen image "$FILE"
+
+# Reaload swaync
+swaync-client -rs
+
+# === Restart waybar with new theme ===
+# pkill waybar
+# waybar &
+pywal_cava
+/home/noro18/Desktop/pywalium/generate.sh

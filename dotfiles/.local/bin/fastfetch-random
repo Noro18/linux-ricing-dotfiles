@@ -1,0 +1,9 @@
+#!/bin/bash
+
+CONFIG_DIR="$HOME/.config/fastfetch/configs"
+
+configs=("$CONFIG_DIR"/*.jsonc)
+
+random_config=${configs[RANDOM % ${#configs[@]}]}
+
+fastfetch --config "$random_config"

@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Config file path
+CONFIG="$HOME/.config/hypr/hyprsunset.conf"
+
+# Amount to change
+STEP=100
+
+# Read current temperature
+TEMP=$(grep -Po '(?<=^temperature = )\d+' "$CONFIG")
+
+# Determine action
+if [ "$1" == "up" ]; then
+    TEMP=$((TEMP + STEP))
+elif [ "$1" == "down" ]; then
+    TEMP=$((TEMP - STEP))
+fi
+
+# Clamp values (e.g., 2000K to 6500K)
+if [ "$TEMP" -lt 2000 ]; then TEMP=2000; fi
+if [ "$TEMP" -gt 6500 ]; then TEMP=6500; fi
+
+# Update config
+sed -i "s/^temperature = .*/temperature = $TEMP/" "$CONFIG"
+
+# Restart hyprsunset
+pkill hyprsunset
+hyprsunset &
+

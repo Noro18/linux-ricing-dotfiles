@@ -1,0 +1,44 @@
+
+#!/usr/bin/env bash
+# Apply pywal16 colors to Cava
+
+# Load colors
+source "$HOME/.cache/wal/colors.sh"
+
+# Choose which pywal colors to use\
+bg="$background"
+fg="$foreground"
+
+# Pick a few colors for the gradient
+grad1="$color1"
+grad2="$color2"
+grad3="$color3"
+grad4="$color4"
+grad5="$color5"
+grad6="$color6"
+grad7="$color7"
+grad8="$color8"
+
+# Write them to the Cava config
+cat > "$HOME/.config/cava/config" <<EOF
+
+[general]
+live-config = 1
+
+[color]
+background = default
+gradient = 1
+gradient_count = 8
+gradient_color_1 = '${grad1}'
+gradient_color_2 = '${grad2}'
+gradient_color_3 = '${grad3}'
+gradient_color_4 = '${grad4}'
+gradient_color_5 = '${grad5}'
+gradient_color_6 = '${grad6}'
+gradient_color_7 = '${grad7}'
+gradient_color_8 = '${grad8}'
+EOF
+
+# Optionally restart cava if it’s running
+
+EOF

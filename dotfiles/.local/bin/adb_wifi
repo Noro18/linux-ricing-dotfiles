@@ -1,0 +1,23 @@
+#!/bin/bash
+
+PORT=5555
+
+echo "Restarting ADB..."
+adb kill-server
+adb start-server
+
+echo "Enabling TCP mode..."
+adb tcpip $PORT
+
+sleep 2
+
+echo "Getting phone IP..."
+
+PHONE_IP=$(adb shell ip route | grep ap0 | awk '{print $9}')
+
+echo "Detected IP: $PHONE_IP"
+
+echo "Connecting..."
+adb connect $PHONE_IP:$PORT
+
+adb devices

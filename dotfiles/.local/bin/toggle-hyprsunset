@@ -1,0 +1,8 @@
+#!/bin/bash
+PID=$(pgrep -x hyprsunset)
+if [ -z "$PID" ]; then
+    hyprsunset --temperature 3500 --gamma 75 &
+else
+    kill "$PID"
+fi
+

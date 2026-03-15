@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/home/noro18/Documents/Project/Echo-Voice\ Assistant/.venv/bin/python3 /home/noro18/Documents/Project/Echo-Voice\ Assistant/src/cli.py

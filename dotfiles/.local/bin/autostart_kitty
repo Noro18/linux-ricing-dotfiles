@@ -1,0 +1,15 @@
+
+#!/usr/bin/env bash
+# File: ~/.config/hypr/startup.sh
+
+# Wait a bit for Hyprland to fully start
+sleep 1
+
+kitty -e cmatrix &
+# Open terminal 1 and run cava
+kitty -e tty-clock -c &
+# Open terminal 2 and run tty-clock
+kitty -e cava &
+# Open terminal 3 and run any other command, e.g., 
+kitty &
+
