@@ -9,7 +9,7 @@
     margin:      1px  ;
     padding:     0px 0px;
     border:      none;
-    font-family: "JetBrains Nerd Font", "Helvetica Neue", Arial, sans-serif;
+    font-family: "JetBrainsMono Nerd Font", "Helvetica Neue", Arial, sans-serif;
     font-size:   14px;
 }
 
@@ -18,12 +18,14 @@
    Window
    ============================================================ */
 
+
 window#waybar {
     color: @color7;
-    
-    background-color:    alpha(@surface_container, 1);
+    background-color: alpha(@background, 1);
+    border-radius: 10px; /* top-left top-right bottom-right bottom-left */
     transition-property: background-color;
     transition-duration: 0.5s;
+    margin: 20px;
 }
 
 /* Fade bar when a window goes fullscreen */
@@ -77,7 +79,7 @@ tooltip label {
    ============================================================ */
 
 #workspaces {
-    background:    alpha(@surface_container, 0.8);
+    background:    alpha(@background, 0.8);
     color:         @on_primary_fixed;
     padding:       5px;
     border-radius: 12px;
@@ -85,7 +87,7 @@ tooltip label {
 }
 
 #workspaces button {
-    padding:       0px 10px;
+    padding:       0px 5px;
     margin:        2px;
     color:         @on_surface;
     border-radius: 10px;
@@ -134,10 +136,10 @@ tooltip label {
 #custom-temperature,
 #custom-light {
     /* color:            @color7; */
-    padding:          0px 10px;
+    padding:          3px 10px;
     margin:           4px;
     border-radius:    13px;
-    background-color: alpha(@surface_container, 0.8);
+    background-color: alpha(@background, 0.8);
     transition:
         background-color 0.25s ease,
         color            0.25s ease,
@@ -168,7 +170,9 @@ tooltip label {
     transition: color            0.25s ease;
 }
 
-
+#custom-nix {
+    font-size: 23px;
+}
 
 
 

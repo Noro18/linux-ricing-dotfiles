@@ -8,7 +8,7 @@
 
 ---
 
-![Desktop Preview](assets/images/screenshot_2026-03-12_20-31-00.png)
+![Desktop Preview](assets/images/BW.png)
 
 ---
 

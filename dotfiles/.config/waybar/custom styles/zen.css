@@ -1,0 +1,83 @@
+/*
+ * Zen Style for Waybar
+ * A minimalist and clean style
+ */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Mono", "Iosevka Nerd Font", "Font Awesome 6 Free";
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: @background;
+    color: @foreground;
+    transition-property: background-color;
+    transition-duration: .5s;
+    border-radius: 10px;
+}
+
+#workspaces,
+#clock,
+#tray,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#custom-power,
+#custom-weather {
+    padding: 2px 10px;
+    margin: 3px 0px;
+    color: @foreground;
+}
+
+#workspaces button {
+    padding: 0px 5px;
+    margin: 0 3px;
+    color: @color8; /* Inactive workspace color */
+}
+
+#workspaces button.active {
+    color: @foreground;
+    background-color: @color1;
+    border-radius: 5px;
+}
+
+#workspaces button:hover {
+    background-color: @color2;
+    color: @background;
+    border-radius: 5px;
+}
+
+#workspaces button.urgent {
+    color: @color4;
+}
+
+#clock {
+    font-weight: bold;
+}
+
+#tray {
+    background-color: @color0;
+    border-radius: 5px;
+    margin-right: 3px;
+}
+
+#pulseaudio.muted {
+    color: @color4;
+}
+
+#temperature.critical {
+    color: @color4;
+}
+
+#custom-power {
+    color: @color4;
+    background-color: @color0;
+    border-radius: 5px;
+    margin-right: 5px;
+}

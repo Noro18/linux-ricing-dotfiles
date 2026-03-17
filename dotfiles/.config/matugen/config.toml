@@ -43,8 +43,8 @@ input_path = '~/.config/matugen/templates/starship-colors.toml'
 output_path = '~/.config/starship.toml'
 
 
-[templates.chrome]
-input_path = '/home/noro18/.config/matugen/templates/chromium-theme.json'
-output_path = '/home/noro18/.config/chromium/Default/Extensions/Matugen-theme/manifest.json'
+# [templates.chrome]
+# input_path = '/home/noro18/.config/matugen/templates/chromium-theme.json'
+# output_path = '/home/noro18/.config/chromium/Default/Extensions/Matugen-theme/manifest.json'
 
 

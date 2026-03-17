@@ -134,7 +134,7 @@ tooltip label {
 #custom-light {
     color:            @color7;
     padding:          0px 10px;
-    margin:           4px;
+    margin:           0px 2px;
     border-radius:    50px;
     background-color: alpha(@background, 1);
     transition:

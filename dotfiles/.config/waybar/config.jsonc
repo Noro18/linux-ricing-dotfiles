@@ -1,13 +1,15 @@
 {
     "layer": "top",
     "font": "JetBrains Nerd Font 10",
+    "margin": "10 10 0 10",
     "reload_style_on_change": true,
     "modules-left": [
+        "custom/nix",
         "clock",
         "network",
         "custom/temperature",
         "custom/light",
-        "hyprland/window"
+        "hyprland/window",
     ],
 
     "modules-center": [
@@ -22,6 +24,11 @@
         "custom/swaync",
         "tray"
     ],
+
+    "custom/nix": {
+    "format": " 󰣇 ",
+    "tooltip": "false"
+  },
     "battery": {
         "format": "{capacity}% {icon}",
         "format-icons": [

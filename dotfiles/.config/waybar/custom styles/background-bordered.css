@@ -9,7 +9,7 @@
     margin:      1px  ;
     padding:     0px 0px;
     border:      none;
-    font-family: "JetBrains Nerd Font", "Helvetica Neue", Arial, sans-serif;
+    font-family: "JetBrainsMono Nerd Font", "Helvetica Neue", Arial, sans-serif;
     font-size:   14px;
 }
 
@@ -132,7 +132,8 @@ tooltip label {
 #custom-swaync,
 #tray,
 #custom-temperature,
-#custom-light {
+#custom-light,
+#custom-nix{
     /* color:            @color7; */
     padding:          0px 10px;
     margin:           4px;
@@ -152,8 +153,8 @@ tooltip label {
 #backlight:hover,
 #custom-swaync:hover,
 #tray:hover,
-#custom-temperature:hover,
-#custom-light:hover {
+#custom-temperature:hover
+{
     border: 1.5px solid @primary;
     color:      @primary;
 }
@@ -177,7 +178,9 @@ tooltip label {
     color: @color7;
 }
 
-#clock {
+#clock,
+
+#custom-nix {
     color: @color16;
     border: 1.5px solid @color7;
 }
