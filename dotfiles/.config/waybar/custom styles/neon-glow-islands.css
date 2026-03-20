@@ -1,0 +1,140 @@
+/*
+ * Neon-Glow-Islands Style for Waybar
+ * A vibrant design that uses colored shadows to create a "neon glow" on the wallpaper.
+ * No hard borders, just soft light and clean typography.
+ */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Nerd Font", "Iosevka Nerd Font";
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+/* Base Group Styling - No visible border, just a soft glow */
+.modules-left, 
+.modules-center, 
+.modules-right {
+    background: alpha(@surface_container_low, 0.6);
+    border-radius: 16px;
+    padding: 2px 10px;
+    margin: 8px 6px;
+}
+
+/* Signature Glows for each group */
+.modules-left {
+    box-shadow: 0 0 15px alpha(@primary, 0.4);
+}
+
+.modules-center {
+    box-shadow: 0 0 15px alpha(@tertiary, 0.4);
+}
+
+.modules-right {
+    box-shadow: 0 0 15px alpha(@secondary, 0.4);
+}
+
+/* Individual Module Accents */
+#custom-nix {
+    color: @primary;
+    font-size: 20px;
+    padding: 0 8px;
+    /* Extra glow for the logo */
+    text-shadow: 0 0 8px alpha(@primary, 0.8);
+}
+
+#clock {
+    color: @on_surface;
+    font-weight: 800;
+    padding: 0 10px;
+}
+
+#window {
+    color: @on_surface_variant;
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+/* Center Group - Minimalist Workspaces */
+#workspaces button {
+    color: alpha(@on_surface, 0.3);
+    padding: 0 10px;
+    margin: 4px 2px;
+    font-size: 16px; /* Slightly larger icons */
+    transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+    color: @tertiary;
+    /* Active indicator glow */
+    text-shadow: 0 0 12px alpha(@tertiary, 1.0);
+    font-weight: bold;
+}
+
+#workspaces button:hover {
+    color: @on_surface;
+    background: alpha(@tertiary, 0.1);
+    border-radius: 8px;
+}
+
+/* Right Group - Information Hub */
+#pulseaudio, #network, #bluetooth, #backlight, #battery, #idle_inhibitor, #cpu, #memory, #custom-swaync, #tray {
+    padding: 0 8px;
+    margin: 4px 2px;
+}
+
+/* Match Icon Colors to Group Theme */
+#pulseaudio { color: @primary; }
+#network { color: @secondary; }
+#bluetooth { color: @primary; }
+#backlight { color: @tertiary; }
+#battery { color: @secondary; }
+#custom-swaync { color: @primary; }
+#tray { color: @on_surface_variant; }
+#cpu { color: @primary; }
+#memory { color: @secondary; }
+#idle_inhibitor { color: @tertiary; }
+
+#group-sysstats {
+    padding-right: 5px;
+}
+
+#group-sysstats.collapsed #memory,
+#group-sysstats.collapsed #idle_inhibitor {
+    padding: 0;
+    margin: 0;
+}
+
+/* Status Highlights */
+#pulseaudio.muted { color: @error; text-shadow: 0 0 5px @error; }
+#battery.charging { color: @primary; }
+#battery.critical:not(.charging) {
+    color: @error;
+    animation: blink-red 1s infinite alternate;
+}
+
+@keyframes blink-red {
+    from { text-shadow: 0 0 0 transparent; }
+    to { text-shadow: 0 0 10px @error; }
+}
+
+/* Cava Visualizer */
+#cava {
+    background: alpha(@surface_container_highest, 0.3);
+    border-radius: 12px;
+    padding: 0 10px;
+    margin: 4px 5px;
+    color: @primary;
+}
+
+/* Subtle separators using pseudo-elements or margin/padding trick */
+#tray {
+    border-left: 1px solid alpha(@outline, 0.2);
+    margin-left: 10px;
+    padding-left: 15px;
+}

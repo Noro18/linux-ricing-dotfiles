@@ -1,0 +1,140 @@
+/*
+ * Modern-Tabs Style for Waybar
+ * A structural design where modules look like hanging tabs with top-accent lines.
+ */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Nerd Font", "Iosevka Nerd Font";
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+/* We remove the background from the main containers to let modules float as tabs */
+.modules-left, 
+.modules-center, 
+.modules-right {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+/* Base Tab Styling for all modules */
+#clock, 
+#battery, 
+#cpu, 
+#memory, 
+#idle_inhibitor,
+#temperature, 
+#backlight, 
+#network, 
+#pulseaudio, 
+#bluetooth, 
+#tray, 
+#custom-nix, 
+#custom-swaync, 
+#custom-light, 
+#custom-temperature, 
+#cava,
+#workspaces {
+    background: @surface_container;
+    color: @on_surface;
+    margin: 0 4px;
+    padding: 4px 12px;
+    border-radius: 0 0 12px 12px; /* Rounded bottom corners for the "tab" look */
+    border-top: 3px solid transparent; /* Placeholder for the accent line */
+    transition: all 0.2s ease;
+}
+
+/* Specific Accent Colors for Tabs */
+#custom-nix {
+    border-top: 3px solid @primary;
+    color: @primary;
+    font-size: 18px;
+}
+
+#clock {
+    border-top: 3px solid @secondary;
+    font-weight: bold;
+}
+
+#cpu { border-top: 3px solid @secondary; }
+#memory { border-top: 3px solid @tertiary; }
+#idle_inhibitor { border-top: 3px solid @primary; }
+
+#group-sysstats {
+    padding-right: 5px;
+}
+
+#group-sysstats.collapsed #memory,
+#group-sysstats.collapsed #idle_inhibitor {
+    padding: 0;
+    margin: 0;
+    border-top: none;
+}
+
+#workspaces {
+    background: alpha(@surface_container_low, 0.8);
+    padding: 0 4px;
+    border-top: 3px solid @tertiary;
+}
+
+#workspaces button {
+    color: @on_surface_variant;
+    padding: 0 6px;
+    margin: 4px 2px;
+    border-radius: 8px;
+}
+
+#workspaces button.active {
+    color: @tertiary;
+    background: alpha(@tertiary, 0.15);
+}
+
+#workspaces button:hover {
+    background: alpha(@on_surface, 0.1);
+}
+
+/* Right Side Tab Groups */
+#pulseaudio { border-top: 3px solid @primary; }
+#network { border-top: 3px solid @secondary; }
+#backlight { border-top: 3px solid @tertiary; }
+#battery { border-top: 3px solid @primary; }
+#bluetooth { border-top: 3px solid @secondary; }
+#custom-swaync { border-top: 3px solid @primary; }
+#tray { border-top: 3px solid @on_surface_variant; }
+
+/* Status-specific Colors */
+#pulseaudio.muted { color: @error; border-top-color: @error; }
+#battery.charging { color: @primary; }
+#battery.critical:not(.charging) {
+    background-color: @error;
+    color: @on_error;
+}
+
+/* Hover Effect: "Pull Down" animation */
+#clock:hover, 
+#battery:hover, 
+#pulseaudio:hover, 
+#network:hover, 
+#backlight:hover, 
+#cpu:hover, 
+#memory:hover, 
+#idle_inhibitor:hover,
+#custom-nix:hover {
+    padding-top: 8px; /* Simulates the tab being pulled down slightly */
+    background: @surface_container_high;
+}
+
+/* Cava Visualizer - floating bar below the tabs */
+#cava {
+    background: transparent;
+    color: @primary;
+    margin: 0 15px;
+    border-top: none;
+}

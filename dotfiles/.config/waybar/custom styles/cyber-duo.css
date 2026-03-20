@@ -1,0 +1,124 @@
+/*
+ * Cyber-Duo Style for Waybar
+ * A sharp, geometric design with asymmetrical accents and high-contrast grouping.
+ */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Nerd Font", "Iosevka Nerd Font";
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+#waybar > box {
+    margin: 8px 15px;
+}
+
+/* Left Group - Slanted Right */
+.modules-left {
+    background: @surface_container_low;
+    border-bottom: 3px solid @primary;
+    border-radius: 5px 20px 0 5px;
+    padding: 2px 15px 2px 10px;
+    margin-right: 10px;
+}
+
+/* Center Group - Geometric Pill */
+.modules-center {
+    background: @surface_container_low;
+    border-top: 3px solid @tertiary;
+    border-radius: 15px;
+    padding: 2px 10px;
+}
+
+/* Right Group - Slanted Left */
+.modules-right {
+    background: @surface_container_low;
+    border-bottom: 3px solid @secondary;
+    border-radius: 20px 5px 5px 0;
+    padding: 2px 10px 2px 15px;
+    margin-left: 10px;
+}
+
+/* Individual Module Tweaks */
+#clock, #battery, #cpu, #memory, #idle_inhibitor, #temperature, #backlight, #network, #pulseaudio, #bluetooth, #tray, #custom-nix, #custom-swaync, #custom-light, #custom-temperature, #cava {
+    padding: 0 10px;
+    color: @on_surface;
+}
+
+#custom-nix {
+    color: @primary;
+    font-size: 20px;
+}
+
+#clock {
+    font-weight: 800;
+    color: @primary;
+}
+
+/* Workspaces - Segmented Blocks */
+#workspaces button {
+    padding: 0 8px;
+    margin: 4px 2px;
+    color: @on_surface_variant;
+    background: transparent;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+}
+
+#workspaces button.active {
+    color: @on_tertiary_fixed;
+    background: @tertiary;
+    border-radius: 12px;
+}
+
+#workspaces button:hover {
+    background: alpha(@tertiary, 0.3);
+}
+
+/* Icon Highlight Colors */
+#pulseaudio { color: @primary; }
+#network { color: @secondary; }
+#backlight { color: @tertiary; }
+#battery { color: @secondary; }
+#bluetooth { color: @primary; }
+#custom-swaync { color: @primary; }
+#cpu { color: @primary; }
+#memory { color: @secondary; }
+#idle_inhibitor { color: @tertiary; }
+
+#group-sysstats {
+    padding-right: 5px;
+}
+
+#group-sysstats.collapsed #memory,
+#group-sysstats.collapsed #idle_inhibitor {
+    padding: 0;
+    margin: 0;
+}
+
+/* Status-specific Styling */
+#pulseaudio.muted { color: @error; }
+#battery.charging { color: @primary; }
+#network.disconnected { color: @error; }
+
+/* Subtle Separators using Padding/Margin instead of borders to avoid GTK CSS bloat */
+#tray {
+    margin-left: 5px;
+    padding-left: 10px;
+    border-left: 1px solid alpha(@outline, 0.3);
+}
+
+#cava {
+    color: @primary;
+}
+
+/* Interactive Hover effect - subtle background lift */
+.modules-left:hover, .modules-center:hover, .modules-right:hover {
+    background: @surface_container;
+}

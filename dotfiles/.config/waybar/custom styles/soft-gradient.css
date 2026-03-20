@@ -1,0 +1,122 @@
+/*
+ * Soft-Gradient Style for Waybar
+ * A premium design with layered gradients, soft shadows, and glowing indicators.
+ */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Nerd Font", "Iosevka Nerd Font";
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+/* Main Container Groups */
+.modules-left, 
+.modules-center, 
+.modules-right {
+    background: @surface_container_low;
+    border: 1px solid alpha(@outline, 0.1);
+    border-radius: 12px;
+    padding: 4px 10px;
+    margin: 10px 5px;
+    /* Soft elevation shadow */
+    box-shadow: 0 4px 12px alpha(@shadow, 0.2);
+}
+
+/* Left Group Accents */
+#custom-nix {
+    color: @primary;
+    font-size: 20px;
+    padding-right: 12px;
+}
+
+#clock {
+    color: @on_surface;
+    font-weight: 700;
+    padding: 0 10px;
+    border-left: 2px solid alpha(@primary, 0.3);
+}
+
+#window {
+    color: @on_surface_variant;
+    font-style: italic;
+    padding-left: 10px;
+}
+
+/* Center Group - The "Active" Island */
+.modules-center {
+    background: linear-gradient(to bottom, @surface_container_high, @surface_container);
+    border: 1px solid alpha(@tertiary, 0.3);
+}
+
+#workspaces button {
+    color: alpha(@on_surface, 0.4);
+    padding: 0 8px;
+    margin: 2px;
+    transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+    color: @tertiary;
+    background: alpha(@tertiary, 0.1);
+    border-radius: 8px;
+    /* Subtle glow */
+    text-shadow: 0 0 8px alpha(@tertiary, 0.6);
+}
+
+#workspaces button:hover {
+    color: @on_surface;
+    background: alpha(@surface_container_highest, 0.5);
+    border-radius: 8px;
+}
+
+/* Right Group - Information Hub */
+#pulseaudio, #network, #bluetooth, #backlight, #battery, #idle_inhibitor, #cpu, #memory, #custom-swaync, #tray, #cava {
+    padding: 0 8px;
+    margin: 0 2px;
+    border-radius: 6px;
+}
+
+/* Color coding icons for clarity */
+#pulseaudio { color: @primary; }
+#network { color: @secondary; }
+#bluetooth { color: @primary; }
+#backlight { color: @tertiary; }
+#battery { color: @secondary; }
+#custom-swaync { color: @primary; }
+#cava { color: @primary; }
+#cpu { color: @secondary; }
+#memory { color: @tertiary; }
+#idle_inhibitor { color: @primary; }
+
+#group-sysstats {
+    padding-right: 5px;
+}
+
+#group-sysstats.collapsed #memory,
+#group-sysstats.collapsed #idle_inhibitor {
+    padding: 0;
+    margin: 0;
+}
+
+/* Status indicators */
+#pulseaudio.muted { color: @error; }
+#network.disconnected { color: @error; }
+#battery.charging { color: @primary; }
+
+/* Interactive Hover state for Right Group */
+#pulseaudio:hover, #network:hover, #battery:hover, #backlight:hover, #cpu:hover, #memory:hover, #idle_inhibitor:hover {
+    background: alpha(@on_surface, 0.05);
+}
+
+/* Tray specific spacing */
+#tray {
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 1px solid alpha(@outline, 0.2);
+}

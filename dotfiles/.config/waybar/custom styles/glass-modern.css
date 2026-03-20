@@ -1,0 +1,187 @@
+/*
+ * Glass Modern Style for Waybar
+ * A sleek, modern design with glassmorphism and vibrant accents.
+ */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Nerd Font", "Iosevka Nerd Font";
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: @on_surface;
+}
+
+#waybar > box {
+    margin: 5px 12px;
+}
+
+/* Glass Pill Container for Module Groups */
+.modules-left, 
+.modules-center, 
+.modules-right {
+    background: alpha(@surface_container, 0.7);
+    border: 1px solid alpha(@outline_variant, 0.3);
+    border-radius: 16px;
+    padding: 2px 10px;
+    box-shadow: 0 4px 6px alpha(@shadow, 0.2);
+}
+
+/* Individual Module Styling */
+#clock, 
+#battery, 
+#cpu, 
+#memory, 
+#idle_inhibitor,
+#temperature, 
+#backlight, 
+#network, 
+#pulseaudio, 
+#bluetooth, 
+#tray, 
+#custom-nix, 
+#custom-swaync, 
+#custom-light, 
+#custom-temperature, 
+#cava,
+#window {
+    padding: 0 8px;
+    margin: 4px 2px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Left Group */
+#custom-nix {
+    color: @primary;
+    font-size: 18px;
+    padding-left: 12px;
+    padding-right: 4px;
+}
+
+#clock {
+    color: @on_surface;
+    font-weight: bold;
+}
+
+#network {
+    color: @secondary;
+}
+
+#network.disconnected {
+    color: @error;
+}
+
+#custom-temperature, #custom-light {
+    font-size: 16px;
+    color: @tertiary;
+}
+
+#cpu {
+    color: @secondary;
+}
+
+#memory {
+    color: @tertiary;
+}
+
+#idle_inhibitor {
+    color: @secondary;
+}
+
+#group-sysstats {
+    padding-right: 5px;
+}
+
+#group-sysstats.collapsed #memory,
+#group-sysstats.collapsed #idle_inhibitor {
+    padding: 0;
+    margin: 0;
+}
+
+/* Center Group - Workspaces */
+#workspaces {
+    background: transparent;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    margin: 4px 2px;
+    color: alpha(@on_surface, 0.5);
+    background: transparent;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+    color: @on_primary_container;
+    background: @primary_container;
+    min-width: 45px;
+}
+
+#workspaces button:hover {
+    color: @on_surface;
+    background: alpha(@surface_container_highest, 0.6);
+}
+
+#workspaces button.urgent {
+    color: @on_error_container;
+    background: @error_container;
+}
+
+/* Right Group */
+#cava {
+    color: @secondary;
+    margin: 4px 10px;
+}
+
+#bluetooth {
+    color: @primary;
+}
+
+#bluetooth.disabled {
+    color: alpha(@on_surface, 0.3);
+}
+
+#backlight {
+    color: @tertiary;
+}
+
+#pulseaudio {
+    color: @primary;
+}
+
+#pulseaudio.muted {
+    color: @error;
+}
+
+#battery {
+    color: @secondary;
+}
+
+#battery.charging {
+    color: @primary;
+}
+
+#battery.critical:not(.charging) {
+    color: @on_error;
+    background-color: @error;
+}
+
+#custom-swaync {
+    color: @primary;
+    font-size: 16px;
+}
+
+#tray {
+    padding-right: 12px;
+}
+
+/* Hover effects for interactivity */
+#clock:hover, #battery:hover, #pulseaudio:hover, #network:hover, #bluetooth:hover, #backlight:hover, #custom-swaync:hover, #cpu:hover, #memory:hover, #idle_inhibitor:hover {
+    background: alpha(@surface_container_highest, 0.8);
+}

@@ -1,0 +1,125 @@
+/*
+ * Floating-Glass-Pills Style for Waybar
+ * A clean, rounded design optimized for bars with margins.
+ * Uses frosted glass effects and glowing accents.
+ */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Nerd Font", "Iosevka Nerd Font";
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+/* We use fully rounded pill shapes for the main groups */
+.modules-left, 
+.modules-center, 
+.modules-right {
+    background: alpha(@surface_container_low, 0.7);
+    border: 1px solid alpha(@outline, 0.2);
+    border-radius: 24px; /* Fully rounded capsules */
+    padding: 2px 8px;
+    margin: 4px 6px;
+    /* Soft shadow to make it "float" above the wallpaper */
+    box-shadow: 0 4px 15px alpha(@shadow, 0.3);
+}
+
+/* Left Group Accents */
+#custom-nix {
+    color: @primary;
+    font-size: 20px;
+    padding: 0 10px;
+}
+
+#clock {
+    color: @on_surface;
+    font-weight: 800;
+    padding: 0 12px;
+    background: alpha(@primary, 0.1);
+    border-radius: 18px;
+    margin: 4px 0;
+}
+
+/* Center Group - The Floating Workspace Island */
+#workspaces {
+    background: transparent;
+}
+
+#workspaces button {
+    color: alpha(@on_surface, 0.5);
+    padding: 0 12px;
+    margin: 4px 2px;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+    color: @on_tertiary_fixed;
+    background: @tertiary;
+    min-width: 40px;
+    /* Glowing active state */
+    box-shadow: 0 0 10px alpha(@tertiary, 0.5);
+}
+
+#workspaces button:hover {
+    color: @on_surface;
+    background: alpha(@on_surface, 0.1);
+}
+
+/* Right Group - Elegant Icons */
+#pulseaudio, #network, #bluetooth, #backlight, #battery, #idle_inhibitor, #cpu, #memory, #custom-swaync, #tray {
+    padding: 0 10px;
+    margin: 4px 2px;
+    border-radius: 15px;
+    transition: all 0.2s ease;
+}
+
+/* Colored Icons */
+#pulseaudio { color: @primary; }
+#network { color: @secondary; }
+#bluetooth { color: @primary; }
+#backlight { color: @tertiary; }
+#battery { color: @secondary; }
+#custom-swaync { color: @primary; }
+#cpu { color: @secondary; }
+#memory { color: @tertiary; }
+#idle_inhibitor { color: @primary; }
+
+#group-sysstats {
+    padding-right: 5px;
+}
+
+#group-sysstats.collapsed #memory,
+#group-sysstats.collapsed #idle_inhibitor {
+    padding: 0;
+    margin: 0;
+}
+
+/* Interactive Hover - Subtle Glow */
+#pulseaudio:hover, #network:hover, #battery:hover, #backlight:hover, #cpu:hover, #memory:hover, #idle_inhibitor:hover {
+    background: alpha(@surface_container_highest, 0.8);
+    color: @on_surface;
+}
+
+/* Special styling for Cava to keep it floating */
+#cava {
+    background: alpha(@surface_container_low, 0.5);
+    border-radius: 15px;
+    padding: 0 15px;
+    margin: 4px 10px;
+    color: @secondary;
+}
+
+/* Status specific fixes */
+#pulseaudio.muted { color: @error; }
+#network.disconnected { color: @error; }
+#battery.charging { color: @primary; }
+
+#tray {
+    margin-left: 8px;
+}

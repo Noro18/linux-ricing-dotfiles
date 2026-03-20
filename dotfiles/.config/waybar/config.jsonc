@@ -9,7 +9,7 @@
         "network",
         "custom/temperature",
         "custom/light",
-        "hyprland/window",
+        "hyprland/window"
     ],
 
     "modules-center": [
@@ -17,7 +17,8 @@
     ],
     "modules-right": [
         "cava",
-         "bluetooth",
+        "group/sysstats",
+        "bluetooth",
         "backlight",
         "pulseaudio",
         "battery",
@@ -25,6 +26,37 @@
         "tray"
     ],
 
+    "group/sysstats": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-memory",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "cpu",
+            "memory",
+            "idle_inhibitor"
+        ]
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "cpu": {
+        "interval": 10,
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "interval": 30,
+        "format": "{}% ",
+        "tooltip-format": "{used:0.1f}G/{total:0.1f}G"
+    },
     "custom/nix": {
     "format": " 󰣇 ",
     "tooltip": "false"
@@ -38,7 +70,7 @@
             "",
             ""
         ],
-        "format-charging": "{capacity}% {icon} ",
+        "format-charging": "{capacity}% {icon} "
     }, "clock": {
         "format": "{:%H:%M}  ",
         "format-alt": "{:%A, %B %d, %Y (%R)}  ",
@@ -180,7 +212,7 @@
         "tooltip": false,
         "format-icons": ["○"],
         "on-scroll-up": "bash ~/.config/waybar/scripts/waybar-light-controls/temperature_control.sh up",
-        "on-scroll-down": "bash ~/.config/waybar/scripts/waybar-light-controls/temperature_control.sh down",
+        "on-scroll-down": "bash ~/.config/waybar/scripts/waybar-light-controls/temperature_control.sh down"
 },
 
 "custom/light":{
@@ -189,14 +221,7 @@
         "tooltip": false,
         "format-icons": ["●"],
         "on-scroll-up": "bash ~/.config/waybar/scripts/waybar-light-controls/light_control.sh up",
-        "on-scroll-down": "bash ~/.config/waybar/scripts/waybar-light-controls/light_control.sh down",
-},
-
-
-
-
-
-
-
+        "on-scroll-down": "bash ~/.config/waybar/scripts/waybar-light-controls/light_control.sh down"
+}
 
 }
