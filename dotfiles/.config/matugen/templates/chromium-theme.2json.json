@@ -1,0 +1,28 @@
+{
+	"manifest_version": 2,
+	"version": "1.0",
+	"name": "Matugen Theme",
+	"theme": {
+		"colors": {
+			"background_tab":                [{{ colors.primary_container.default.red }}, {{ colors.primary_container.default.green }}, {{ colors.primary_container.default.blue }}],
+			"background_tab_inactive":        [{{ colors.primary_container.default.red }}, {{ colors.primary_container.default.green }}, {{ colors.primary_container.default.blue }}],
+			"bookmark_text":                  [{{ colors.on_primary_container.default.red }}, {{ colors.on_primary_container.default.green }}, {{ colors.on_primary_container.default.blue }}],
+			"button_background":              [{{ colors.primary_container.default.red }}, {{ colors.primary_container.default.green }}, {{ colors.primary_container.default.blue }}],
+			"frame":                          [{{ colors.on_primary.default.red }}, {{ colors.on_primary.default.green }}, {{ colors.on_primary.default.blue }}],
+			"frame_inactive":                 [{{ colors.on_primary.default.red }}, {{ colors.on_primary.default.green }}, {{ colors.on_primary.default.blue }}],
+			"ntp_background":                 [{{ colors.background.default.red }}, {{ colors.background.default.green }}, {{ colors.background.default.blue }}],
+			"ntp_header":                     [{{ colors.primary_container.default.red }}, {{ colors.primary_container.default.green }}, {{ colors.primary_container.default.blue }}],
+			"ntp_link":                       [{{ colors.primary.default.red }}, {{ colors.primary.default.green }}, {{ colors.primary.default.blue }}],
+			"ntp_text":                       [{{ colors.on_background.default.red }}, {{ colors.on_background.default.green }}, {{ colors.on_background.default.blue }}],
+			"omnibox_background":             [{{ colors.on_primary.default.red }}, {{ colors.on_primary.default.green }}, {{ colors.on_primary.default.blue }}],
+			"omnibox_text":                   [{{ colors.on_secondary_container.default.red }}, {{ colors.on_secondary_container.default.green }}, {{ colors.on_secondary_container.default.blue }}],
+			"omnibox_text_inactive":          [{{ colors.on_secondary_container.default.red }}, {{ colors.on_secondary_container.default.green }}, {{ colors.on_secondary_container.default.blue }}],
+			"tab_background_text":            [{{ colors.on_primary_container.default.red }}, {{ colors.on_primary_container.default.green }}, {{ colors.on_primary_container.default.blue }}],
+			"tab_background_text_inactive":   [{{ colors.on_primary_container.default.red }}, {{ colors.on_primary_container.default.green }}, {{ colors.on_primary_container.default.blue }}],
+			"tab_text":                       [{{ colors.on_primary_container.default.red }}, {{ colors.on_primary_container.default.green }}, {{ colors.on_primary_container.default.blue }}],
+			"toolbar":                        [{{ colors.primary_container.default.red }}, {{ colors.primary_container.default.green }}, {{ colors.primary_container.default.blue }}],
+			"toolbar_button_icon":            [{{ colors.on_primary_container.default.red }}, {{ colors.on_primary_container.default.green }}, {{ colors.on_primary_container.default.blue }}],
+			"toolbar_text":                   [{{ colors.on_primary_container.default.red }}, {{ colors.on_primary_container.default.green }}, {{ colors.on_primary_container.default.blue }}]
+		}
+	}
+}

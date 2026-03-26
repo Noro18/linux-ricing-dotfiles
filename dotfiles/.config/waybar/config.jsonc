@@ -5,20 +5,20 @@
     "reload_style_on_change": true,
     "modules-left": [
         "custom/nix",
-        "clock",
+        "hyprland/workspaces",
         "network",
+        "bluetooth",
         "custom/temperature",
         "custom/light",
         "hyprland/window"
     ],
 
     "modules-center": [
-        "hyprland/workspaces"
+        "clock"
     ],
     "modules-right": [
         "cava",
         "group/sysstats",
-        "bluetooth",
         "backlight",
         "pulseaudio",
         "battery",

@@ -27,10 +27,13 @@ window#waybar {
 #cpu,
 #memory,
 #temperature,
+#battery,
 #backlight,
+#tray,
 /* #cava, */
 #custom-power,
-#custom-weather {
+#custom-weather,
+#custom-swaync {
     background-color: @surface_container_high;
     border-radius: 20px;
     padding: 2px 12px;
@@ -100,6 +103,10 @@ window#waybar {
     margin: 0px 20px;
 }
 
+
+#bluetooth {
+       padding: 2px 12px;
+}
 #custom-power {
     color: @color4;
     background-color: @color0;

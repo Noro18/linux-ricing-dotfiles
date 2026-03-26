@@ -3,9 +3,9 @@ check_contrast = true
 
 #
 # palette = "dark"
-backend="resized"
+backend="wal"
 
-color_space = "lch"
+color_space = "lab"
 
 [templates]
 
