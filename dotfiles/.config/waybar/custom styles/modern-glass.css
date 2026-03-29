@@ -1,0 +1,387 @@
+/* Modern Glass Waybar Style
+ * Clean, minimalist design with glass-morphism elements
+ * Uses both Matugen and Wallust color palettes
+ */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Nerd Font", "Font Awesome 6 Free";
+    font-size: 12px;
+    font-weight: 500;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: @foreground;
+}
+
+/* General module base */
+#workspaces,
+#clock,
+#tray,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#battery,
+#backlight,
+#custom-swaync,
+#custom-temperature,
+#custom-light,
+#custom-nix,
+#hyprland-window,
+#bluetooth,
+#cava {
+    background: alpha(@surface_container_high, 0.6);
+    /* backdrop-filter: blur(20px); */
+    border-radius: 16px;
+    padding: 6px 16px;
+    margin: 4px 6px;
+    color: @on_surface;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    border: 1px solid alpha(@outline, 0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover effect for all modules */
+#workspaces:hover,
+#clock:hover,
+#tray:hover,
+#pulseaudio:hover,
+#network:hover,
+#cpu:hover,
+#memory:hover,
+#battery:hover,
+#backlight:hover,
+#custom-swaync:hover,
+#custom-temperature:hover,
+#custom-light:hover,
+#custom-nix:hover,
+#hyprland-window:hover,
+#bluetooth:hover,
+#cava:hover {
+    background: alpha(@surface_container_highest, 0.75);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.18);
+    transform: translateY(-1px);
+}
+
+/* ========== LEFT MODULES ========== */
+
+/* NixOS icon */
+#custom-nix {
+    font-size: 16px;
+    color: @color7;
+    padding: 6px 12px;
+    margin-right: 2px;
+}
+
+/* Workspaces - pill buttons */
+#workspaces {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    margin: 0 6px;
+    padding: 0;
+}
+
+#workspaces button {
+    padding: 6px 14px;
+    margin: 3px 4px;
+    background: alpha(@surface_container, 0.5);
+    color: @on_surface_variant;
+    border-radius: 14px;
+    border: 1px solid alpha(@outline, 0.1);
+    transition: all 0.25s ease;
+}
+
+#workspaces button:hover {
+    background: alpha(@primary, 0.15);
+    color: @primary;
+    border-color: alpha(@primary, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#workspaces button.active {
+    background: @primary;
+    color: @on_primary_fixed;
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(251, 176, 215, 0.35);
+}
+
+#workspaces button.urgent {
+    background: @error;
+    color: @on_error;
+    border-color: transparent;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Network */
+#network {
+    color: @color6;
+}
+
+#network.disconnected {
+    color: @color4;
+}
+
+/* Bluetooth */
+#bluetooth {
+    color: @color5;
+    padding: 6px 12px;
+}
+
+#bluetooth.disabled {
+    color: @color8;
+    opacity: 0.6;
+}
+
+/* Custom temperature & light controls - joined together */
+#custom-temperature,
+#custom-light {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    padding: 6px 8px;
+    margin: 0;
+}
+
+#custom-temperature {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 1px solid alpha(@outline, 0.2);
+    margin-right: 0;
+}
+
+#custom-light {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 1px solid alpha(@outline, 0.2);
+    margin-left: 0;
+}
+
+#custom-temperature:hover,
+#custom-light:hover {
+    background: alpha(@surface_container, 0.5);
+    border-radius: 12px;
+    margin: 3px 6px;
+}
+
+/* Window title */
+#hyprland/window {
+    color: @on_surface_variant;
+    font-weight: 500;
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ========== CENTER MODULES ========== */
+
+#clock {
+    font-weight: 700;
+    font-size: 13px;
+    color: @color4;
+    background: alpha(@surface_container_low, 0.7);
+    border: 1px solid alpha(@color4, 0.3);
+    padding: 8px 20px;
+    box-shadow: 0 4px 16px rgba(251, 176, 215, 0.2);
+}
+
+#clock:hover {
+    background: alpha(@surface_container, 0.8);
+    border-color: alpha(@color4, 0.5);
+}
+
+/* Tooltip styling */
+tooltip {
+    background: alpha(@surface_container_highest, 0.95);
+    /* backdrop-filter: blur(20px); */
+    border: 1px solid alpha(@outline, 0.2);
+    border-radius: 12px;
+    padding: 8px 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+tooltip label {
+    color: @on_surface;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+}
+
+/* ========== RIGHT MODULES ========== */
+
+/* Group box for sysstats */
+#group-sysstats {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+#group-sysstats > box {
+    background: transparent;
+}
+
+/* CPU & Memory */
+#cpu,
+#memory {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    padding: 6px 10px;
+    margin: 0 2px;
+    min-width: 65px;
+}
+
+#cpu {
+    color: @color5;
+}
+
+#cpu.critical {
+    color: @color4;
+}
+
+#memory {
+    color: @color6;
+}
+
+/* Idle inhibitor */
+#idle_inhibitor {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    padding: 6px 8px;
+    margin: 0 2px;
+}
+
+#idle_inhibitor.activated {
+    color: @color3;
+}
+
+#idle_inhibitor.deactivated {
+    color: @color8;
+}
+
+/* Backlight */
+#backlight {
+    color: @color2;
+    padding: 6px 12px;
+}
+
+/* Pulseaudio */
+#pulseaudio {
+    color: @color7;
+    padding: 6px 12px;
+}
+
+#pulseaudio.muted {
+    color: @color8;
+}
+
+/* Battery */
+#battery {
+    color: @on_surface;
+    padding: 6px 12px;
+}
+
+#battery.charging {
+    color: @color3;
+}
+
+#battery.critical {
+    color: @color4;
+    animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Tray */
+#tray {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    padding: 6px 8px;
+    margin: 0 2px 0 8px;
+}
+
+#tray > * {
+    margin: 0 4px;
+    border-radius: 8px;
+    padding: 2px;
+}
+
+/* Swaync notification indicator */
+#custom-swaync {
+    color: @color5;
+    background: alpha(@surface_container_low, 0.7);
+    border: 1px solid alpha(@outline, 0.15);
+}
+
+/* Cava audio visualizer */
+#cava {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    padding: 0 8px;
+    margin: 0 4px;
+    color: @color6;
+}
+
+/* ========== GROUPING ELEMENTS ========== */
+
+/* Slightly adjust spacing for aesthetics */
+.modules-left > *:first-child {
+    margin-left: 0;
+}
+
+.modules-right > *:last-child {
+    margin-right: 0;
+}
+
+.modules-center > *:first-child {
+    margin-left: 0;
+}
+
+.modules-center > *:last-child {
+    margin-right: 0;
+}
+
+/* ========== ACCESSIBILITY & POLISH ========== */
+
+/* Ensure readable font rendering */
+* {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth transitions for state changes */
+#workspaces button,
+#clock,
+#tray,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#battery,
+#backlight,
+#custom-swaync,
+#custom-temperature,
+#custom-light,
+#custom-nix,
+#hyprland-window,
+#bluetooth,
+#cava {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
