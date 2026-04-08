@@ -95,14 +95,13 @@
                     "on-scroll-up": "shift_up",
                     "on-scroll-down": "shift_down"
                     }
-    },
-    "hyprland/workspaces": {
-        "format": "{name}",
+    }, "hyprland/workspaces": {
+       "format": "{name}",
         "persistent-workspaces": {
-            "*": 6, // 5 workspaces by default on every monitor
-            "HDMI-A-1": 3 // but only three on HDMI-A-1
-        }
-    },
+      "*": 6
+    }
+
+  },
     "hyprland/window": {
         "format": "{}",
         "separate-outputs": true
@@ -130,7 +129,7 @@
         "on-click": "pavucontrol",
         "ignored-sinks": [
             "Easy Effects Sink"
-        ]
+      ]
     },
     "bluetooth": {
         "format": "{icon} {status}",

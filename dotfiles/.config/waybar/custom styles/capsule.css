@@ -13,9 +13,9 @@
 
 window#waybar {
     /* slightly transparent background */
-    background-color: rgba(12, 14, 13, 0.4);
+    background-color: alpha(@background-matugen, 0.5);
     color: @foreground;
-    border-radius: 5px;
+    border-radius: 12px;
 }
 
 /* General module styling */
@@ -53,6 +53,12 @@ window#waybar {
     color: @color8; /* Inactive workspace color */
     background-color: transparent;
     border-radius: 15px;
+    transition:
+        background 0.25s cubic-bezier(0.4, 0.0, 0.2, 1),
+        color      0.25s cubic-bezier(0.4, 0.0, 0.2, 1),
+        padding    0.2s  cubic-bezier(0.4, 0.0, 0.2, 1),
+        box-shadow 0.25s cubic-bezier(0.4, 0.0, 0.2, 1),
+        transform  0.15s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 #workspaces button.active {
@@ -73,7 +79,7 @@ window#waybar {
 /* Specific modules */
 #clock {
     font-weight: bold;
-    background-color: @color4; /* Different color for clock */
+    background-color: @color5; /* Different color for clock */
 }
 
 #tray {
