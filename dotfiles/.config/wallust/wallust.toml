@@ -2,7 +2,7 @@ check_contrast = true
 # saturation = 55
 
 #
-# palette = "dark"
+# palette = "light"
 backend="wal"
 
 color_space = "lab"
@@ -14,3 +14,4 @@ vscode = { src = 'vscode.json', dst = '~/.cache/wallust/colors.json' }
 vscode2 = { src = 'vscode', dst = '~/.cache/wallust/colors' }
 waybar = { src = 'waybar.css', dst = '~/.config/waybar/colors-waybar.css'}
 kitty = { src='kitty.conf', dst='~/.cache/wallust/colors-kitty.conf'}
+zen = { src='zen.json', dst='~/.cache/wal/colors.json'}

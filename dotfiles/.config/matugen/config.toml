@@ -46,4 +46,34 @@ output_path = '~/.config/starship.toml'
 input_path = '/home/noro18/.config/matugen/templates/chromium-theme.json'
 output_path = '/home/noro18/.config/chromium/Default/Extensions/Matugen-theme/manifest.json'
 
+# PywalFox bridge (for Zen Browser UI via PywalZen)
+# [templates.pywalfox]
+# input_path  = "~/.config/matugen/templates/pywalfox-colors.json"
+# output_path = "~/.config/matugen/generated/pywalfox-colors.json"
+# post_hook   = '''
+# bash -c '{
+#   mkdir -p "$HOME/.cache/wal"
+#   ln -nfs "$HOME/.config/matugen/generated/pywalfox-colors.json" "$HOME/.cache/wal/colors.json"
+#   pywalfox update
+# } >/dev/null 2>&1 & disown'
+# '''
 
+# Website colors (userContent.css)
+[templates.zen-colors]
+input_path  = "~/.config/matugen/templates/zen-colors.css"
+output_path = "/home/noro18/.zen/6ehkzul9.Default (release)/chrome/colors.css"
+
+[templates.pywalfox]
+input_path  = "~/.config/matugen/templates/pywalfox-colors.json"
+output_path = "~/.config/matugen/generated/pywalfox-colors.json"
+post_hook   = '''
+bash -c '
+{
+  if command -v pywalfox >/dev/null 2>&1; then
+    mkdir -p "$HOME/.cache/wal"
+    ln -nfs "$HOME/.config/matugen/generated/pywalfox-colors.json" "$HOME/.cache/wal/colors.json"
+    pywalfox update
+  fi
+} >/dev/null 2>&1 </dev/null & disown
+'
+'''

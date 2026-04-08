@@ -1,0 +1,7 @@
+:root {
+  --wal-bg:      {{colors.background.default.hex}};
+  --wal-fg:      {{colors.on_surface.default.hex}};
+  --wal-primary: {{colors.primary.default.hex}};
+  --wal-surface: {{colors.surface.default.hex}};
+  --wal-accent:  {{colors.secondary.default.hex}};
+}
