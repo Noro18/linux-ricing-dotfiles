@@ -6,7 +6,7 @@
  */
 
 @define-color text            @on_surface;
-@define-color background-alt  @surface_bright;
+@define-color background-alt  @surface_brigh;
 @define-color selected        @primary;
 @define-color hover           alpha(@selected, .4);
 @define-color urgent          @error;
@@ -29,9 +29,9 @@
 }
 
 .floating-notifications.background .notification-row .notification-background {
-  background: @background;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,.6);
-  border: 1px solid @selected;
+  background: @surface_container_high;
+  box-shadow: 0 0 8px 0 rgba(0,0,0,.3);
+  border: 0px solid @selected;
   border-radius: 24px;
   margin: 16px;
   padding: 0;
@@ -56,14 +56,14 @@
 
 .floating-notifications.background .notification-row .notification-background .notification > *:last-child > * .notification-action {
   border-radius: 8px;
-  background-color: @background-alt ;
+  background-color: red ;
   margin: 6px;
-  border: 1px solid transparent;
+  border: 0px solid transparent;
 }
 
 .floating-notifications.background .notification-row .notification-background .notification > *:last-child > * .notification-action:hover {
   background-color: @hover;
-  border: 1px solid @selected;
+  border: 0px solid @selected;
 }
 
 .floating-notifications.background .notification-row .notification-background .notification > *:last-child > * .notification-action:active {

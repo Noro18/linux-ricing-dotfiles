@@ -1,6 +1,6 @@
 {
   "$schema": "/etc/xdg/swaync/configSchema.json",
-  "positionX": "center",
+  "positionX": "right",
   "positionY": "top",
   "cssPriority": "user",
   "control-center-width": 400,

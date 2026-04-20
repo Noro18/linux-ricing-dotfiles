@@ -9,11 +9,11 @@
 @define-color text                  @on_surface;
 @define-color background-alt  	    @surface_container_highest;
 @define-color background-alt-alpha  alpha(@surface_bright, .55);
-@define-color background-sec  	    alpha(@surface, 0.55);
+@define-color background-sec  	    alpha(@surface_container, 0.55);
 @define-color selected        	    @color7;
 @define-color accent                @tertiary;
 @define-color text-alt              @surface;
-@define-color hover           	    alpha(@selected, .55);
+@define-color hover           	    alpha(@primary_container, .55);
 @define-color urgent          	    @error;
 
 * {
@@ -34,10 +34,10 @@
 /* CONTROL CENTER ------------------------------------------------------------------------ */
 
 .control-center {
-  background: @background;
+  background: @surface_container_high;
   border-radius: 12px;
-  border: 1px solid @selected;
-  box-shadow: 0 0 10px 0 rgba(0,0,0,.6);
+  border: 0px solid @selected;
+  box-shadow: 2px 5px 10px 0 rgba(0,0,0,.3);
   margin: 18px;
   padding: 12px;
 }
@@ -175,11 +175,11 @@
 }
 
 .widget-dnd > switch:hover {
-  background: red;
+  background: @hover;
 }
 
 .widget-dnd > switch:checked {
-  background: @color5;
+  background: @primary;
 }
 
 .widget-dnd > switch:checked:hover {
