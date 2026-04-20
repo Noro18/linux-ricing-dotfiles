@@ -1,8 +1,8 @@
 {
-  "wallpaper": "/home/noro18/.config/wallpapers/grand-teton-national-park-snake-river-wyoming-usa-sunrise-3840x2160-4372.jpg",
+  "wallpaper": "/home/noro18/.config/wallpapers/wallhaven-28k3wm.jpg",
   "alpha": "100",
   "colors": {
-    "color0":  "#131318",
+    "color0":  "#18120c",
     "color1":  "",
     "color2":  "",
     "color3":  "",
@@ -12,11 +12,11 @@
     "color7":  "",
     "color8":  "",
     "color9":  "",
-    "color10": "#bec2ff",
+    "color10": "#f6bc70",
     "color11": "",
     "color12": "",
-    "color13": "#39393f",
+    "color13": "#3f3830",
     "color14": "",
-    "color15": "#e4e1e9"
+    "color15": "#ede0d4"
   }
 }

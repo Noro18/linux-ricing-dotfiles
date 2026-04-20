@@ -1,5 +1,5 @@
 check_contrast = true 
-# saturation = 55
+saturation = 0
 
 #
 # palette = "light"

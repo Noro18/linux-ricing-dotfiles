@@ -1,31 +1,30 @@
 {
     "layer": "top",
     "font": "JetBrains Nerd Font 10",
-    "margin": "10 10 0 10",
+    "margin": "8 8 -5 8",
     "reload_style_on_change": true,
     "modules-left": [
         "custom/nix",
-        "hyprland/workspaces",
+        "clock",
         "network",
         "bluetooth",
-        "custom/temperature",
-        "custom/light",
+        
         "hyprland/window"
     ],
-
     "modules-center": [
-        "clock"
+        "custom/temperature",
+        "custom/light",
+        "hyprland/workspaces",
+        "backlight",
+        "pulseaudio",
     ],
     "modules-right": [
         "cava",
         "group/sysstats",
-        "backlight",
-        "pulseaudio",
         "battery",
         "custom/swaync",
         "tray"
     ],
-
     "group/sysstats": {
         "orientation": "horizontal",
         "drawer": {
@@ -39,7 +38,6 @@
             "idle_inhibitor"
         ]
     },
-
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -58,50 +56,53 @@
         "tooltip-format": "{used:0.1f}G/{total:0.1f}G"
     },
     "custom/nix": {
-    "format": " 󰣇 ",
-    "tooltip": "false"
-  },
+        "format": "󰣇",
+        "tooltip": "false"
+    },
     "battery": {
-        "format": "{capacity}% {icon}",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
-        "format-charging": "{capacity}% {icon} "
-    }, "clock": {
+        "format": "{capacity}",
+        "states": {
+            "warning":30,
+            "critical": 15
+        },
+        "format-charging": "{capacity}% "
+    },
+    "clock": {
         "format": "{:%H:%M}  ",
         "format-alt": "{:%A, %B %d, %Y (%R)}  ",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
-                    "mode"          : "year",
-                    "mode-mon-col"  : 3,
-                    "weeks-pos"     : "right",
-                    "on-scroll"     : 1,
-                    "format": {
-                              "months":     "<span color='#ffead3'><b>{}</b></span>",
-                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-                              }
-                    },
-        "actions":  {
-                    "on-click-right": "mode",
-                    "on-scroll-up": "tz_up",
-                    "on-scroll-down": "tz_down",
-                    "on-scroll-up": "shift_up",
-                    "on-scroll-down": "shift_down"
-                    }
-    }, "hyprland/workspaces": {
-       "format": "{name}",
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-scroll-up": "tz_up",
+            "on-scroll-down": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+    "hyprland/workspaces": {
+        "format": "{id}",
+        "format-icons": {
+            "active": "{id}",
+            "default": "",
+            "urgent": ""
+        },
         "persistent-workspaces": {
-      "*": 6
-    }
-
-  },
+            "*": 6
+        }
+    },
     "hyprland/window": {
         "format": "{}",
         "separate-outputs": true
@@ -129,7 +130,7 @@
         "on-click": "pavucontrol",
         "ignored-sinks": [
             "Easy Effects Sink"
-      ]
+        ]
     },
     "bluetooth": {
         "format": "{icon} {status}",
@@ -139,9 +140,8 @@
         },
         "tooltip-format": "{device_alias}"
     },
-
     "network": {
-        "interface": "{wlo0}",
+        "interface": "wlo1",
         "format": "{ifname}",
         "format-wifi": "{essid} ",
         "format-ethernet": "{ipaddr}/{cidr} 󰊗",
@@ -192,10 +192,19 @@
         "reverse": false,
         "bar_delimiter": 0,
         "input_delay": 2,
-        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+        "format-icons": [
+            "▁",
+            "▂",
+            "▃",
+            "▄",
+            "▅",
+            "▆",
+            "▇",
+            "█"
+        ],
         "actions": {
-                   "on-click-right": "mode"
-                   }
+            "on-click-right": "mode"
+        }
     },
     "custom/swaync": {
         "format": "{icon}",
@@ -205,22 +214,24 @@
         "tooltip": false,
         "on-click": "swaync-client -t"
     },
-    "custom/temperature":{
+    "custom/temperature": {
         "format": "{icon} ",
         "format-source": "{icon} ",
         "tooltip": false,
-        "format-icons": ["○"],
+        "format-icons": [
+            "○"
+        ],
         "on-scroll-up": "bash ~/.config/waybar/scripts/waybar-light-controls/temperature_control.sh up",
         "on-scroll-down": "bash ~/.config/waybar/scripts/waybar-light-controls/temperature_control.sh down"
-},
-
-"custom/light":{
+    },
+    "custom/light": {
         "format": "{icon} ",
         "format-source": "{icon} ",
         "tooltip": false,
-        "format-icons": ["●"],
+        "format-icons": [
+            "●"
+        ],
         "on-scroll-up": "bash ~/.config/waybar/scripts/waybar-light-controls/light_control.sh up",
         "on-scroll-down": "bash ~/.config/waybar/scripts/waybar-light-controls/light_control.sh down"
-}
-
+    }
 }
