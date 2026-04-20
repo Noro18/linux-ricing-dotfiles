@@ -1,0 +1,247 @@
+/*
+ * Aurora Ribbon Style for Waybar
+ * Floating segmented groups with bright workspace pills and restrained accents.
+ */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "Iosevka Nerd Font", "Font Awesome 6 Free";
+    font-size: 10px;
+    font-weight: 600;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: @on_surface;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background: @surface_container_low;
+    border: 1px solid alpha(@outline, 0.18);
+    border-radius: 16px;
+    padding: 1px 6px;
+    margin: 6px 4px 0 4px;
+}
+
+.modules-center {
+    background: @surface_container;
+    border-color: alpha(@primary, 0.22);
+}
+
+#custom-nix {
+    color: @primary;
+    font-size: 16px;
+    margin-right: 4px;
+    padding: 0 6px;
+}
+
+#window,
+#network,
+#bluetooth,
+#pulseaudio,
+#backlight,
+#battery,
+#cpu,
+#memory,
+#idle_inhibitor,
+#custom-swaync,
+#tray,
+#cava {
+    background: @surface_container_high;
+    border: 1px solid alpha(@outline_variant, 0.35);
+    border-radius: 14px;
+    color: @on_surface;
+    margin: 1px 2px;
+    padding: 2px 8px;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+#window {
+    background: @surface_container_high;
+    color: @on_surface_variant;
+    min-width: 110px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#workspaces {
+    background: transparent;
+    border: none;
+    margin: 0 4px;
+    padding: 0;
+}
+
+#workspaces button {
+    background: @surface_container_high;
+    border: 1px solid transparent;
+    border-radius: 14px;
+    color: alpha(@on_surface, 0.58);
+    margin: 1px 5px;
+    min-width: 20px;
+    padding: 1px 8px;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+#workspaces button:hover {
+    background: @secondary_container;
+    border-color: alpha(@secondary, 0.35);
+    color: @on_secondary_container;
+}
+
+#workspaces button.active {
+    background: @primary;
+    border-color: alpha(@primary_fixed, 0.35);
+    color: @on_primary;
+}
+
+#workspaces button.urgent {
+    background: @error;
+    color: @on_error;
+}
+
+#clock {
+    background: @tertiary;
+    border: 1px solid alpha(@tertiary_fixed, 0.35);
+    border-radius: 16px;
+    color: @on_tertiary;
+    font-size: 11px;
+    font-weight: 800;
+    margin: 0;
+    padding: 3px 10px;
+}
+
+#network {
+    color: @secondary;
+}
+
+#network.disconnected {
+    color: @error;
+}
+
+#bluetooth {
+    color: @primary;
+}
+
+#bluetooth.disabled {
+    color: alpha(@on_surface_variant, 0.6);
+}
+
+#cava {
+    background: transparent;
+    border: none;
+    color: @tertiary;
+    margin-right: 6px;
+    padding-left: 4px;
+    padding-right: 6px;
+}
+
+#group-sysstats {
+    background: @surface_container_high;
+    border: 1px solid alpha(@outline_variant, 0.3);
+    border-radius: 15px;
+    margin: 1px 2px;
+    padding: 0 2px;
+}
+
+#group-sysstats #cpu,
+#group-sysstats #memory,
+#group-sysstats #idle_inhibitor {
+    background: transparent;
+    border: none;
+    margin: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#group-sysstats.collapsed #memory,
+#group-sysstats.collapsed #idle_inhibitor {
+    padding: 0;
+}
+
+#custom-temperature,
+#custom-light {
+    background: @surface_container_high;
+    border-top: 1px solid alpha(@outline_variant, 0.35);
+    border-bottom: 1px solid alpha(@outline_variant, 0.35);
+    color: @on_surface;
+    margin: 1px 0;
+    padding: 2px 6px;
+}
+
+#custom-temperature {
+    border-left: 1px solid alpha(@outline_variant, 0.35);
+    border-top-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+    margin-left: 2px;
+}
+
+#custom-light {
+    border-right: 1px solid alpha(@outline_variant, 0.35);
+    border-top-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+    margin-right: 2px;
+}
+
+#pulseaudio {
+    color: @primary;
+}
+
+#pulseaudio.muted {
+    color: @error;
+}
+
+#backlight {
+    color: @tertiary;
+}
+
+#battery {
+    color: @secondary;
+}
+
+#battery.charging {
+    color: @primary;
+}
+
+#custom-swaync {
+    color: @primary;
+}
+
+#tray {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+#window:hover,
+#network:hover,
+#bluetooth:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#idle_inhibitor:hover,
+#custom-swaync:hover,
+#tray:hover,
+#custom-temperature:hover,
+#custom-light:hover {
+    background: @surface_container_highest;
+    border-color: alpha(@primary, 0.24);
+}
+
+tooltip {
+    background: @surface;
+    border: 1px solid alpha(@outline, 0.3);
+    border-radius: 10px;
+    color: @on_surface;
+}
+
+tooltip label {
+    color: @on_surface;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    padding: 2px;
+}
