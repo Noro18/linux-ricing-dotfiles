@@ -8,7 +8,7 @@
 
 ---
 
-![Desktop Preview](assets/images/BW.png)
+![Desktop Preview](assets/images/rice.gif)
 
 ---
 
@@ -29,8 +29,8 @@ Colors are generated dynamically from your wallpaper using **[Matugen](https://g
 
 | | |
 |:---:|:---:|
-| ![Preview 1](assets/images/screenshot_2026-03-12_20-31-00.png) | ![Preview 2](assets/images/screenshot_2026-03-12_20-31-13.png) |
-| ![Preview 3](assets/images/screenshot_2026-03-12_20-34-26.png) | ![Preview 4](assets/images/screenshot_2026-03-12_20-28-37.png) |
+| ![Preview 1](assets/images/screenshots7.png) | ![Preview 2](assets/images/screenshots13.png) |
+| ![Preview 3](assets/images/screenshots15.png) | ![Preview 4](assets/images/screenshots11.png) |
 
 ---
 

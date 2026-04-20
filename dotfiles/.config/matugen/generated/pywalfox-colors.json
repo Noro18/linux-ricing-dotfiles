@@ -1,8 +1,8 @@
 {
-  "wallpaper": "/home/noro18/.config/wallpapers/wallhaven-28k3wm.jpg",
+  "wallpaper": "/home/noro18/.config/wallpapers/orange duo.png",
   "alpha": "100",
   "colors": {
-    "color0":  "#18120c",
+    "color0":  "#121318",
     "color1":  "",
     "color2":  "",
     "color3":  "",
@@ -12,11 +12,11 @@
     "color7":  "",
     "color8":  "",
     "color9":  "",
-    "color10": "#f6bc70",
+    "color10": "#b0c6ff",
     "color11": "",
     "color12": "",
-    "color13": "#3f3830",
+    "color13": "#38393f",
     "color14": "",
-    "color15": "#ede0d4"
+    "color15": "#e2e2e9"
   }
 }
