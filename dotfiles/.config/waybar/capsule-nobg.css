@@ -1,0 +1,122 @@
+/*
+ * Capsule Style for Waybar
+ * A modern and minimalist style with capsule-like modules.
+ */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "Iosevka Nerd Font", "Font Awesome 6 Free";
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    /* slightly transparent background */
+    background-color: alpha(@background-matugen, 0.5);
+    color: @foreground;
+    border-radius: 12px;
+}
+
+/* General module styling */
+#workspaces,
+#clock,
+#tray,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#temperature,
+#battery,
+#backlight,
+#tray,
+/* #cava, */
+#custom-power,
+#custom-weather,
+#custom-swaync {
+    background-color: @surface_container_high;
+    border-radius: 20px;
+    padding: 2px 12px;
+    margin: 4px 5px;
+    color: @foreground;
+}
+
+/* Workspaces */
+#workspaces {
+    background-color: @surface_container_high;
+    padding: 0px 5px;
+}
+
+#workspaces button {
+    padding: 0px 10px;
+    margin: 4px 3px;
+    color: @color8; /* Inactive workspace color */
+    background-color: transparent;
+    border-radius: 15px;
+    transition:
+        background 0.25s cubic-bezier(0.4, 0.0, 0.2, 1),
+        color      0.25s cubic-bezier(0.4, 0.0, 0.2, 1),
+        padding    0.2s  cubic-bezier(0.4, 0.0, 0.2, 1),
+        box-shadow 0.25s cubic-bezier(0.4, 0.0, 0.2, 1),
+        transform  0.15s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+#workspaces button.active {
+    color: @on_primary_fixed;
+    background-color: @primary;
+    box-shadow: 0 0 10px alpha(@primary, 0.9);
+}
+
+#workspaces button:hover {
+    background-color: @color1;
+    color: @foreground;
+}
+
+#workspaces button.urgent {
+    background-color: @color4;
+    color: @background;
+}
+
+/* Specific modules */
+#clock {
+    font-weight: bold;
+    background-color: @color5; /* Different color for clock */
+}
+
+#tray {
+    background-color: transparent; /* Make tray transparent */
+}
+
+#custom-nix {
+  color: @color7;
+  font-size:24px;
+}
+
+
+#pulseaudio {
+    color: @color5;
+    padding: 20px;
+}
+
+#pulseaudio.muted {
+    color: @color4;
+}
+
+#temperature.critical {
+    color: @color4;
+}
+
+#cava {
+    color: @color6;
+    margin: 0px 20px;
+}
+
+
+#bluetooth {
+       padding: 2px 12px;
+}
+#custom-power {
+    color: @color4;
+    background-color: @color0;
+    border-radius: 20px;
+    margin-right: 5px;
+}
