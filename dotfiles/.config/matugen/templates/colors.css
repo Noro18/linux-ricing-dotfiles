@@ -2,3 +2,18 @@
 <* for name, value in colors *>
 @define-color {{name}} {{value.default.rgba}};
 <* endfor *>
+@define-color success       {{ colors.success.default.rgb | set_lightness: 80  | set_saturation: 40.0}};
+@define-color success_light {{ colors.success.light.rgb | set_lightness: 80  | set_saturation: 40.0}};
+@define-color success_dark  {{ colors.success.dark.rgb | set_lightness: -80 | set_saturation: 40.0}};
+
+@define-color blue       {{ colors.blue.default.rgb | set_lightness: 80  | set_saturation: 40.0}};
+@define-color blue_light {{ colors.blue.light.rgb | set_lightness: 80 | set_saturation: 40.0}};
+@define-color blue_dark  {{ colors.blue.dark.rgb | set_lightness: -80 | set_saturation: 40.0}};
+
+@define-color red       {{ colors.red.default.rgb | set_lightness: 80 | set_saturation: 40.0}};
+@define-color red_light {{ colors.red.light.rgb | set_lightness: 80 | set_saturation: 40.0}};
+@define-color red_dark  {{ colors.red.dark.rgb | set_lightness: -80 | set_saturation: 40.0}};
+
+@define-color yellow       {{ colors.yellow.default.rgb | set_lightness: 80 | set_saturation: 40.0}};
+@define-color yellow_light {{ colors.yellow.light.rgb | set_lightness: 80 | set_saturation: 40.0}};
+@define-color yellow_dark  {{ colors.yellow.dark.rgb | set_lightness: -80 | set_saturation: 40.0}};

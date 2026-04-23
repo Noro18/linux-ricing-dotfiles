@@ -2,6 +2,21 @@
 saturation = 0
 contrast = 1.5
 
+[config.custom_colors.success]
+color = "#358738"
+blend = true
+
+[config.custom_colors.blue]
+color = "#3f597b"
+blend = true
+
+[config.custom_colors.red]
+color = "#9a4141"
+blend = true
+
+[config.custom_colors.yellow]
+color = "#c0ba17"
+blend = true
 
 [config.wallpaper]
 command = "hyprpaper"

@@ -1,8 +1,8 @@
 {
-  "wallpaper": "/home/noro18/.config/wallpapers/orange duo.png",
+  "wallpaper": "/home/noro18/.config/wallpapers/leaves1.png",
   "alpha": "100",
   "colors": {
-    "color0":  "#121318",
+    "color0":  "#101510",
     "color1":  "",
     "color2":  "",
     "color3":  "",
@@ -12,11 +12,11 @@
     "color7":  "",
     "color8":  "",
     "color9":  "",
-    "color10": "#b0c6ff",
+    "color10": "#9cd49f",
     "color11": "",
     "color12": "",
-    "color13": "#38393f",
+    "color13": "#363a35",
     "color14": "",
-    "color15": "#e2e2e9"
+    "color15": "#e0e4db"
   }
 }

@@ -1,14 +1,13 @@
 {
     "layer": "top",
     "font": "JetBrains Nerd Font 10",
-    "margin": "8 8 -5 8",
+    "margin": "10 8 -5 8",
     "reload_style_on_change": true,
     "modules-left": [
         "custom/nix",
         "clock",
         "network",
-        "bluetooth",
-        
+        "bluetooth", 
         "hyprland/window"
     ],
     "modules-center": [
@@ -61,10 +60,17 @@
     },
     "battery": {
         "format": "{capacity}",
+        "format-icons": ["", "", "", "", ""],
+        "events": {
+            "on-discharging-warning": "notify-send -u normal 'Low Battery'",
+            "on-discharging-critical": "notify-send -u critical 'Very Low Battery'",
+            "on-charging-100": "notify-send -u normal 'Battery Full!'"
+        },
         "states": {
             "warning":30,
             "critical": 15
         },
+
         "format-charging": "{capacity}% "
     },
     "clock": {
