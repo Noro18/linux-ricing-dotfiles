@@ -1,36 +1,49 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = '''
-[░▒▓](color1)[󰣇](fg:#090c0c bg:color1)$username[](bg:color6 fg:color1)$directory[](fg:color11 bg:color6)$git_branch$git_status[](fg:color6 bg:color6)$nodejs$rust$golang$php[](fg:color6 bg:color12)$conda[ ](fg:color12)$line_break$character'''
+[░▒▓](color3)[󰣇](fg:#090c0c bg:color3)$username[](bg:color1 fg:color3)$directory[](fg:color1 bg:color6)$git_branch$git_status[](fg:color6 bg:color6)$nodejs$rust$golang$php[](fg:color6 bg:color0)$conda[ ](fg:color0)$line_break$character'''
 
 palette = 'colors'
 
 [palettes.colors]
 mustard = '#af8700' # example
-color1 = '{{colors.primary_fixed_dim.default.hex}}'
-color2 = '{{colors.on_primary.default.hex}}'
-color3 = '{{colors.on_surface_variant.default.hex}}'
-color4 = '{{colors.surface_container.default.hex}}'
-color5 = '{{colors.on_primary.default.hex}}'
-color6 = '{{colors.on_primary.default.hex}}'
-color7 = '{{colors.surface.default.hex}}'
-color8 = '{{colors.primary.default.hex}}'
-color9 = '{{colors.tertiary.default.hex}}'
-color10 = '{{colors.on_primary_fixed.default.hex}}'
-color11 = '{{colors.primary_container.default.hex}}'
-color12 = '{{colors.on_secondary.default.hex}}'
+matugen-color1 = '{{colors.primary_fixed_dim.default.hex}}'
+matugen-color2 = '{{colors.on_primary.default.hex}}'
+matugen-color3 = '{{colors.on_surface_variant.default.hex}}'
+matugen-color4 = '{{colors.surface_container.default.hex}}'
+matugen-color5 = '{{colors.on_primary.default.hex}}'
+matugen-color6 = '{{colors.on_primary.default.hex}}'
+matugen-color7 = '{{colors.surface.default.hex}}'
+matugen-color8 = '{{colors.primary.default.hex}}'
+matugen-color9 = '{{colors.tertiary.default.hex}}'
+matugen-color10 = '{{colors.on_primary_fixed.default.hex}}'
+matugen-color11 = '{{colors.primary_container.default.hex}}'
+matugen-color12 = '{{colors.on_secondary.default.hex}}'
+color0 = 'black'
+color1 = 'red'
+color2 = 'green'
+color3 = 'yellow'
+color4 = 'blue'
+color5 = 'magenta'
+color6 = 'cyan'
+color7 = 'white'
+color8 = '#8bd5b5'
+color9 = '#a6cce0'
+color10 = '#002115'
+color11 = '#00513a'
+color12 = '#1f352b'
 
 
 [username]
 show_always = true
-style_user = "fg:#090c0c bg:color1 "
-style_root = "fg:#090c0c bg:color1 "
+style_user = "fg:#090c0c bg:color3 "
+style_root = "fg:#090c0c bg:color3 "
 format = "[ $user ]($style)"
 disabled = false
 
 
 [directory]
-style = "fg:color3 bg:color11"
+style = "fg:matugen-color12 bg:color1"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -43,12 +56,12 @@ truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-style = "bg:color6"
+style = "bg:color2"
 format = '[[ $symbol $branch ](fg:color1 bg:color6)]($style)'
 
 [git_status]
 style = "bg:color6"
-format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:color6)]($style)'
+format = '[[($all_status$ahead_behind )](fg:matugen-color7 bg:color6)]($style)'
 
 [nodejs]
 symbol = ""
