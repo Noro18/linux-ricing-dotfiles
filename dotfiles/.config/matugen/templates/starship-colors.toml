@@ -1,7 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = '''
-[░▒▓](color3)[󰣇](fg:#090c0c bg:color3)$username[](bg:color1 fg:color3)$directory[](fg:color1 bg:color6)$git_branch$git_status[](fg:color6 bg:color6)$nodejs$rust$golang$php[](fg:color6 bg:color0)$conda[ ](fg:color0)$line_break$character'''
+[░▒▓](color3)[󰣇](fg:#090c0c bg:color3)$username[](bg:color1 fg:color3)$directory[](fg:color1 bg:color2)$git_branch$git_status[](fg:color2 bg:color2)$nodejs$rust$golang$php[](fg:color2 bg:color0)$conda[ ](fg:color0)$line_break$character'''
 
 palette = 'colors'
 
@@ -57,11 +57,11 @@ truncation_symbol = "…/"
 [git_branch]
 symbol = ""
 style = "bg:color2"
-format = '[[ $symbol $branch ](fg:color1 bg:color6)]($style)'
+format = '[ $symbol $branch ](fg:matugen-color7 bg:color2)'
 
 [git_status]
 style = "bg:color6"
-format = '[[($all_status$ahead_behind )](fg:matugen-color7 bg:color6)]($style)'
+format = '[($all_status$ahead_behind )](fg:matugen-color7 bg:color2)'
 
 [nodejs]
 symbol = ""
