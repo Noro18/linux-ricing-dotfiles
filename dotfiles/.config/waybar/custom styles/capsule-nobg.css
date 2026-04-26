@@ -6,7 +6,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "JetBrainsMono Nerd Font", "Iosevka Nerd Font", "Font Awesome 6 Free";
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free";
     font-size: 14px;
     margin: 0;
     padding: 0;
@@ -24,7 +24,7 @@ window#waybar {
 
 .modules-center {
     background-color: @surface_container;
-    border-radius: 20px
+    border-radius: 20px;
 }
 
 .modules-right{
@@ -159,6 +159,7 @@ window#waybar {
 #cava {
     color: @color6;
     margin: 0px 20px;
+    background-color: alpha(red, 0)
 }
 
 
@@ -204,26 +205,32 @@ window#waybar {
 /* Battery styles */
 
 #battery {
-    background-color: rgb(80, 136, 80);
+    background-color: @success;
     margin: 7px;
     color: @on_primary;
     min-height: 2px;
     min-width: 20px;
     padding: 0px 5px;
-    font-size: 10px;
+    font-size: 13px;
+    font-weight: bold;
     border-radius: 6px;
 
 }
 
-
+#battery.charging {
+    color: @on_primary;
+    background-color: @blue;
+}
 
 #battery.warning {
-    color: @error;
-    background-color: @error;
+    color: @on_error;
+    background-color: @yellow;
 }
 
 #battery.critical {
     color: @on_error;
+    background-color: @red;
+    
 }
 
 /* optional: add blinking animation when critical */
