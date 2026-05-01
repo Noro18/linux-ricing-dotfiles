@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+WALLPAPER_DIR="$HOME/.config/wallpapers"
+MONITOR="eDP-1"
+HYPR_CONF="$HOME/.config/hypr/hyprpaper.conf"
+
+# Pick random image
+FILE=$1
+
+if [ -z "$FILE" ]; then
+  notify-send "No images found in $WALLPAPER_DIR"
+  exit 1
+fi
+
+# copy wallpaper to background for lock screen
+cp "$FILE" ~/.config/background
+
+notify-send "Lock Screen Wallpaper changed to '$(basename "$FILE")'"
