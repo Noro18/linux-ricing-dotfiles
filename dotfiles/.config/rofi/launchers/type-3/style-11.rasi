@@ -1,7 +1,7 @@
 
 @import                          "shared/colors.rasi"
 @import                          "shared/fonts.rasi"
-1
+
 
 configuration{
     font: "Noto Sans 20";

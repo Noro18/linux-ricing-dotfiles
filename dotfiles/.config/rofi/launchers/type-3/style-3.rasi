@@ -148,9 +148,9 @@ element normal.urgent {
     text-color:                  @on-error-container;
 }
 element selected.normal {
-    background-color:            @primary-container;
+    background-color:            @selected;
     text-color:                  @on-primary-container;
-    border:                      1px solid;
+    border:                      0px solid;
     border-color:                @primary;
 }
 element selected.active {
