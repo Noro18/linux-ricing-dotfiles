@@ -1,0 +1,3 @@
+#!/bin/bash
+hyprctl clients -j | jq -r '.[] | select(.workspace.id != -99) | .pid' | xargs kill
+
