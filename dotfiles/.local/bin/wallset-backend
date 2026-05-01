@@ -3,6 +3,7 @@
 WALLPAPER_DIR="$HOME/.config/wallpapers"
 MONITOR="eDP-1"
 HYPR_CONF="$HOME/.config/hypr/hyprpaper.conf"
+SDDM_WALLPAPER="/usr/share/wallpapers/Next/contents/images/5120x2880.png"
 
 # Pick random image
 FILE=$1
@@ -22,28 +23,44 @@ export PATH="$HOME/anaconda3/bin:/usr/local/bin:/usr/bin:$PATH"
 
 swww img "$FILE" \
   --transition-type any \
-  --transition-duration 0.9 \
+  --transition-duration 1.4 \
   --transition-fps 60 \
   --transition-step 50
 
-/home/noro18/anaconda3/bin/wal --saturate 0.5 -a 0.8 -i "$FILE" -s
+/home/noro18/anaconda3/bin/wal --saturate 0.5 -a 0.8 -i "$FILE"
 wallust run "$FILE"
 
 /home/noro18/.cargo/bin/matugen image "$FILE"
 # swaync-client -rs # uncomment this after fixing the dbus
-swaync-client -rs
 # pkill waybar
 # waybar &
 pywal_cava
 /home/noro18/Desktop/pywalium/generate.sh
 # Set wallpaper live
 
-# Restart waybar with new theme
+# copy wallpaper to background for lock screen
+cp "$FILE" ~/.config/background
 
+# Copy to sddm theme
+if [[ "${FILE##*.}" == "png" ]]; then
+
+  echo "Enter password to copy"
+  sudo /usr/bin/cp "$FILE" "$SDDM_WALLPAPER"
+  notify-send "Image has been set to sddm"
+
+else
+  echo "Enter password to convert and copy"
+
+  sudo magick "$FILE" "$SDDM_WALLPAPER"
+  notify-send "Image has been generated and set to sddm"
+fi
+
+# Restart waybar with new theme
+swaync-client -rs &
 # Update hyprpaper.conf (overwrite safely)
-cat >"$HYPR_CONF" <<EOF
-preload = $FILE
-wallpaper = $MONITOR,$FILE
-EOF
+#cat >"$HYPR_CONF" <<EOF
+# preload = $FILE
+#wallpaper = $MONITOR,$FILE
+# EOF
 
 notify-send "Wallpaper changed to '$(basename "$FILE")'"
