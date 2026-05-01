@@ -1,0 +1,2 @@
+#!/bin/bash
+hyprctl windows list | grep -E '([0-9]+)' | cut -d' ' -f1 | xargs -I {} hyprctl windows close {}
