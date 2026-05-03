@@ -8,7 +8,7 @@
 
 ---
 
-![Desktop Preview](assets/nature-themed-rice/rices.gif)
+![Desktop Preview](assets/slideshow.gif)
 
 ---
 
