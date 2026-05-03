@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+dir="$HOME/.config/rofi/launchers/type-1"
+theme='style-3'
+
+chosen=$(echo -e "Normal\nFocus\nZen" | rofi -dmenu -p "Select Mode" -theme "${dir}/${theme}.rasi") 
+
+if [ -n "$chosen" ]; then 
+  focus-mode $chosen
+fi
+
+notify-send "Entered $chosen mode"
+
