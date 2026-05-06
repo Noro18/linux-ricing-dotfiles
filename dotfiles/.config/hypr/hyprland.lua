@@ -210,7 +210,19 @@ hl.window_rule({
 	},
 	float = true,
 	no_focus = true,
-	decorate = true,
+	decorate = false,
+})
+
+-- ── DaVinci Resolve popup/menu fix (stays open on mouse movement) ──────────
+hl.window_rule({
+	--    name = "davinci-popup-fix",
+	match = {
+		class = "^(resolve)$",
+	},
+	stay_focused = true,
+	-- float = true,
+	-- no_focus = true,
+	-- decorate = true,
 })
 -- Desktop Editor
 hl.window_rule({
