@@ -1,0 +1,95 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "font": "Segoe UI",
+    "height": 48,
+    "spacing": 0,
+    "reload_style_on_change": true,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["image", "wlr/taskbar"],
+    "modules-right": ["custom/swaync", "tray", "pulseaudio", "battery", "clock"],
+
+    "image": {
+        "path": "/home/noro18/.config/waybar/win11-startmenu.png",
+        "size": 32,
+        "interval": 5,
+        "on-click": "/home/noro18/.local/bin/launcher"
+    },
+
+    "hyprland/workspaces": {
+      "format": "{id}",
+      "format-icons": {
+            "active": "{id}",
+            "default": "",
+            "urgent": ""
+        },
+        "persistent-workspaces": {
+            "*": 1
+        }
+  },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 32,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": []
+    },
+
+    "clock": {
+        "format": "{:%I:%M %p\n%m/%d/%Y}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10,
+        "icons": {
+            "blueman": "bluetooth",
+            "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+        }
+    },
+
+
+    "network": {
+        "format-wifi": "󰤨",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰤭",
+        "tooltip-format": "{essid} {signalStrength}%"
+    },
+
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol",
+        "scroll-step": 5,
+        "tooltip-format": "{volume}%"
+
+    },
+   "battery": {
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", ""],
+        "events": {
+            "on-discharging-warning": "notify-send -u normal 'Low Battery'",
+            "on-discharging-critical": "notify-send -u critical 'Very Low Battery'",
+            "on-charging-100": "notify-send -u normal 'Battery Full!'"
+        },
+        "states": {
+            "warning":30,
+            "critical": 15
+        },
+
+        "format-charging": "{icon} ",
+        "tooltip-format": "{capacity}%"
+    },
+   "custom/swaync": {
+        "format": "{icon}",
+        "format-icons": {
+            "default": "󰂚"
+        },
+        "tooltip": false,
+        "on-click": "swaync-client -t"
+    },
+}
