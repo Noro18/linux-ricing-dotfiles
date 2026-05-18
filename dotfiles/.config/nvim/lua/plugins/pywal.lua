@@ -5,8 +5,7 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      -- You can add Neopywal specific options here
-      -- See :h neopywal-configuration
+      use_palette = "wallust",
     },
     config = function(_, opts)
       require("neopywal").setup(opts)
