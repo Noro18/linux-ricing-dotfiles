@@ -1,8 +1,8 @@
 {
-  "wallpaper": "/home/noro18/.config/wallpapers/leaves1.png",
+  "wallpaper": "/home/noro18/.config/wallpapers/gray3.png",
   "alpha": "100",
   "colors": {
-    "color0":  "#101510",
+    "color0":  "#111318",
     "color1":  "",
     "color2":  "",
     "color3":  "",
@@ -12,11 +12,11 @@
     "color7":  "",
     "color8":  "",
     "color9":  "",
-    "color10": "#9cd49f",
+    "color10": "#adc6ff",
     "color11": "",
     "color12": "",
-    "color13": "#363a35",
+    "color13": "#37393e",
     "color14": "",
-    "color15": "#e0e4db"
+    "color15": "#e2e2e9"
   }
 }

@@ -1,6 +1,6 @@
 [color_adjustment]
-saturation = 0
-contrast = 1.5
+saturation = -100
+contrast = 0
 
 [config.custom_colors.success]
 color = "#358738"
@@ -69,7 +69,7 @@ output_path = '/home/noro18/.config/chromium/Default/Extensions/Matugen-theme/ma
 # bash -c '{
 #   mkdir -p "$HOME/.cache/wal"
 #   ln -nfs "$HOME/.config/matugen/generated/pywalfox-colors.json" "$HOME/.cache/wal/colors.json"
-#   pywalfox update
+#   pywalfox updato
 # } >/dev/null 2>&1 & disown'
 # '''
 
