@@ -19,13 +19,16 @@ Focus)
   HYPR_TARGET="$FOCUS"
   WAYBAR_TARGET="$WAYBAR_FOCUS"
   wallset-backend ~/.config/wallpapers/Mountain.png
+  pkill waybar
+  waybar &
   echo "linux" >~/.local/bin/current-theme.txt
-
   ;;
 Zen)
   HYPR_TARGET="$SUPER_FOCUS"
   WAYBAR_TARGET="$WAYBAR_FOCUS"
   wallset-backend ~/.config/wallpapers/Mountain.png
+  pkill waybar
+  waybar &
   echo "linux" >~/.local/bin/current-theme.txt
 
   ;;
@@ -34,14 +37,15 @@ Windows)
   wallset-backend ~/.config/wallpapers/img0.png
   echo "windows" >~/.local/bin/current-theme.txt
   pkill waybar
-  waybar -c ~/.config/waybar/win11-config.jsonc -s ~/.config/waybar/win11-styles.css
+  waybar -c ~/.config/waybar/win11-config.jsonc -s ~/.config/waybar/win11-styles.css &
+  echo "$HYPR_TARGET"
   ;;
 Normal)
   HYPR_TARGET="$NORMAL"
   WAYBAR_TARGET="$WAYBAR_NORMAL"
-  wallset-backend ~/.config/wallpapers/Lady-lighter.png
   pkill waybar
   waybar &
+  wallset-backend ~/.config/wallpapers/firewatch-green.png
   echo "linux" >~/.local/bin/current-theme.txt
 
   ;;
