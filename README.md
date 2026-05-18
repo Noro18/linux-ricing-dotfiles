@@ -78,6 +78,68 @@ These screenshots from `assets/windows/` show the Windows-style direction of the
   </tr>
 </table>
 
+## Waybar Theme Showcase
+
+Waybar styles are not hard-coded into one layout. You can switch between presets through the Rofi-powered `waybar-set` selector, so testing different bar treatments only takes a couple of key presses.
+
+| Waybar Selector | Theme Preview 1 |
+| --- | --- |
+| ![Waybar Selector](assets/Rofi%20menus/rofi-waybar-selector.png) | ![Waybar Theme 1](assets/waybar/waybar1.png) |
+
+| Theme Preview 2 | Theme Preview 3 |
+| --- | --- |
+| ![Waybar Theme 2](assets/waybar/waybar2.png) | ![Waybar Theme 3](assets/waybar/waybar3.png) |
+
+## Rofi Menus
+
+Rofi is used for more than just launching apps here. It drives the launcher flow, power menu, mode switching, and the Waybar theme selector, all styled to match the desktop instead of feeling like separate tools.
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="assets/Rofi%20menus/rofi-launcher.png" alt="Rofi launcher menu">
+      <br>
+      <sub>Application launcher with the same wallpaper-reactive styling as the rest of the shell.</sub>
+    </td>
+    <td width="50%" align="center">
+      <img src="assets/Rofi%20menus/rofi-power-menu.png" alt="Rofi power menu">
+      <br>
+      <sub>Power menu for session actions without breaking the theme language.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <img src="assets/Rofi%20menus/rofi-mode-switcher.png" alt="Rofi mode switcher">
+      <br>
+      <sub>Mode switcher for moving between launcher flows and menu contexts.</sub>
+    </td>
+    <td width="50%" align="center">
+      <img src="assets/Rofi%20menus/rofi-waybar-selector.png" alt="Rofi Waybar selector">
+      <br>
+      <sub>Waybar selector for swapping bar presets directly from Rofi.</sub>
+    </td>
+  </tr>
+</table>
+
+## Desktop Screenshots
+
+These captures show the desktop in regular use across different wallpapers, layouts, and app combinations.
+
+<table>
+  <tr>
+    <td width="50%"><img src="assets/desktop%20screenshots/screenshot_2026-05-19_05-20-19.png" alt="Desktop screenshot with themed launcher"></td>
+    <td width="50%"><img src="assets/desktop%20screenshots/screenshot_2026-05-19_05-30-56.png" alt="Desktop screenshot with editor and browser"></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="assets/desktop%20screenshots/screenshot_2026-05-19_05-34-26.png" alt="Desktop screenshot with bright wallpaper"></td>
+    <td width="50%"><img src="assets/desktop%20screenshots/screenshot_2026-05-19_05-34-48.png" alt="Desktop screenshot with dark wallpaper"></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="assets/desktop%20screenshots/screenshot_2026-05-19_05-34-55.png" alt="Desktop screenshot showing desktop shell details"></td>
+    <td width="50%"><img src="assets/desktop%20screenshots/screenshot_2026-05-19_05-35-25.png" alt="Desktop screenshot showing themed windows"></td>
+  </tr>
+</table>
+
 ## Documentation
 
 | Area | Link |
