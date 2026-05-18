@@ -18,3 +18,4 @@ zen = { src='zen.json', dst='~/.cache/wal/colors.json'}
 neovim = { src = 'colors_neopywal.vim', dst='~/.cache/wallust/colors_neopywal.vim'}
 rofi = { src = 'rofi-colors.rasi', dst ='~/.config/rofi/colors/colors-wallust.rasi'}
 shell = { src = 'colors.sh', dst = '~/.cache/wallust/colors.sh'}
+swaync = {src = "waybar.css", dst='~/.config/swaync/colors.css'}
