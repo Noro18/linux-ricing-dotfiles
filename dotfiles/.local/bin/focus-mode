@@ -4,6 +4,7 @@ CONFIG="$HOME/.config/hypr/hyprland.conf"
 
 FOCUS="$HOME/.config/hypr/focus-mode.conf"
 SUPER_FOCUS="$HOME/.config/hypr/super-focus-mode.conf"
+WINDOWS="$HOME/.config/hypr/windows-mode.conf"
 NORMAL="$HOME/.config/hypr/hyprland-gui.conf"
 
 WAYBAR_FOCUS="$HOME/.config/waybar/custom styles/zen.css"
@@ -14,23 +15,38 @@ WAYBAR_DIR="$HOME/.config/waybar"
 MODE=$1
 
 case "$MODE" in
-focus)
+Focus)
   HYPR_TARGET="$FOCUS"
   WAYBAR_TARGET="$WAYBAR_FOCUS"
   wallset-backend ~/.config/wallpapers/Mountain.png
+  echo "linux" >~/.local/bin/current-theme.txt
+
   ;;
-super)
+Zen)
   HYPR_TARGET="$SUPER_FOCUS"
   WAYBAR_TARGET="$WAYBAR_FOCUS"
   wallset-backend ~/.config/wallpapers/Mountain.png
+  echo "linux" >~/.local/bin/current-theme.txt
+
   ;;
-normal)
+Windows)
+  HYPR_TARGET="$WINDOWS"
+  wallset-backend ~/.config/wallpapers/img0.png
+  echo "windows" >~/.local/bin/current-theme.txt
+  pkill waybar
+  waybar -c ~/.config/waybar/win11-config.jsonc -s ~/.config/waybar/win11-styles.css
+  ;;
+Normal)
   HYPR_TARGET="$NORMAL"
   WAYBAR_TARGET="$WAYBAR_NORMAL"
   wallset-backend ~/.config/wallpapers/Lady-lighter.png
+  pkill waybar
+  waybar &
+  echo "linux" >~/.local/bin/current-theme.txt
+
   ;;
 *)
-  echo "Usage: $0 [focus|super|normal]"
+  echo "Usage: $0 [focus|super|normal|windows]"
   exit 1
   ;;
 esac

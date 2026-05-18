@@ -3,7 +3,7 @@
 # Apply pywal16 colors to Cava
 
 # Load colors
-source "$HOME/.cache/wal/colors.sh"
+source "$HOME/.cache/wallust/colors.sh"
 
 # Choose which pywal colors to use\
 bg="$background"
@@ -24,6 +24,7 @@ cat > "$HOME/.config/cava/config" <<EOF
 
 [general]
 live-config = 1
+bar_spacing = 0
 
 [color]
 background = default
@@ -37,6 +38,10 @@ gradient_color_5 = '${grad5}'
 gradient_color_6 = '${grad6}'
 gradient_color_7 = '${grad7}'
 gradient_color_8 = '${grad8}'
+
+[output]
+method = noncurses
+
 EOF
 
 # Optionally restart cava if it’s running

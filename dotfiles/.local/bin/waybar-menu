@@ -1,8 +1,8 @@
 
 #!/usr/bin/env bash
 
-dir="$HOME/.config/rofi/launchers/type-1"
-theme='style-11'
+dir="$HOME/.config/rofi/launchers/type-1/"
+theme='style-2'
 WAYBAR_DIR="$HOME/.config/waybar/custom styles"
 SCRIPTDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 CWD="$(pwd)"
