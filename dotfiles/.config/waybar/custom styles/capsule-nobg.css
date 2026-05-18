@@ -62,7 +62,7 @@ window#waybar {
     padding: 0px 12px;
 }
 #custom-swaync {
-
+    color: @on_surface;
     padding: 0px 12px;
 }
 
@@ -126,7 +126,7 @@ window#waybar {
 }
 
 #backlight {
-    color: @surface_color;
+    color: @on_surface;;
     margin: 0px;
     border-radius: 0px;
 }
@@ -200,6 +200,7 @@ window#waybar {
 
 #cpu, #memory, #idle_inhibitor {
     padding: 0px 12px;
+    color: @on_surface;
 }
 
 /* Battery styles */

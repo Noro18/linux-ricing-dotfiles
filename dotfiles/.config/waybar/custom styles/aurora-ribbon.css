@@ -12,10 +12,6 @@
     min-height: 0;
 }
 
-window#waybar {
-    background: transparent;
-    color: @on_surface;
-}
 
 .modules-left,
 .modules-center,
