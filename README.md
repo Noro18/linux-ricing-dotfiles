@@ -2,7 +2,7 @@
 
 # 〔 Noro's Hyprland Dotfiles 〕
 
-*A dynamic, color-reactive desktop environment for Hyprland*
+*A Windows-inspired, color-reactive Hyprland setup with themeable bars, menus, and wallpaper-driven styling.*
 
 </div>
 
@@ -10,65 +10,89 @@
 
 ![Desktop Preview](assets/slideshow.gif)
 
----
+## Overview
 
-<div align="center">
+This repo contains my personal Hyprland rice: a desktop that mixes Linux flexibility with a polished Windows-like visual language.  
+The setup is built around dynamic wallpaper theming, switchable Waybar styles, and menus that are meant to feel cohesive instead of patched together.
 
-## • Overview •
+## Highlights
 
-</div>
+### Dynamic Color Pipeline
 
-<details>
-<summary>✨ Notable Features</summary>
+Wallpaper colors flow through the desktop using **[Matugen](https://github.com/InioX/matugen)** and **[Wallust](https://codeberg.org/explosion-mental/wallust)** so the shell, notifications, terminal, and bars stay visually in sync.
 
-<br>
+<table>
+  <tr>
+    <td width="50%"><img src="assets/images/screenshots7.png" alt="Dynamic themed desktop preview 1"></td>
+    <td width="50%"><img src="assets/images/screenshots13.png" alt="Dynamic themed desktop preview 2"></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="assets/images/screenshots15.png" alt="Dynamic themed desktop preview 3"></td>
+    <td width="50%"><img src="assets/images/screenshots11.png" alt="Dynamic themed desktop preview 4"></td>
+  </tr>
+</table>
 
-### 1. 🎨 Dynamic Color Theming
+### Built-In Selectors
 
-Colors are generated dynamically from your wallpaper using **[Matugen](https://github.com/InioX/matugen)** and **[Wallust](https://codeberg.org/explosion-mental/wallust)**.
+The repo includes selectors and menu flows that make it easy to change the look without digging through every config file by hand.
 
-| | |
-|:---:|:---:|
-| ![Preview 1](assets/images/screenshots7.png) | ![Preview 2](assets/images/screenshots13.png) |
-| ![Preview 3](assets/images/screenshots15.png) | ![Preview 4](assets/images/screenshots11.png) |
+| Wallpaper Selector | Waybar Style Selector |
+| --- | --- |
+| ![Wallpaper Selector](assets/images/wallpaper-selector.png) | ![Waybar Selector](assets/images/waybar-selector.png) |
 
----
+## Windows-Inspired Themes
 
-### 2. 🛠️ Customizable Menus
+These screenshots from `assets/windows/` show the Windows-style direction of the rice on Linux: centered taskbar layouts, glassy panels, darker Win11-like surfaces, and launcher variants that still fit the Hyprland workflow.
 
-Pre-built menus that are fully configurable via config files. *(GUI editor coming soon)*
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="assets/windows/screenshot_2026-05-17_22-27-15.png" alt="Windows-inspired Hyprland editing workspace">
+      <br>
+      <sub>Config-focused workspace with a Windows-style taskbar and soft glass panels.</sub>
+    </td>
+    <td width="50%" align="center">
+      <img src="assets/windows/screenshot_2026-05-18_08-58-37.png" alt="Windows-inspired file manager and browser theme on Hyprland">
+      <br>
+      <sub>Integrated app styling across Thunar, Firefox, and the desktop shell.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <img src="assets/windows/screenshot_2026-05-18_08-59-29.png" alt="Windows-inspired Hyprland desktop collage">
+      <br>
+      <sub>Full desktop composition showing the wallpaper, widgets, and shell pieces working together.</sub>
+    </td>
+    <td width="50%" align="center">
+      <img src="assets/windows/screenshot_2026-05-18_10-07-51.png" alt="Windows-style launcher on a bright wallpaper">
+      <br>
+      <sub>Launcher variant on the light wallpaper profile.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <img src="assets/windows/screenshot_2026-05-18_11-37-56.png" alt="Windows-style launcher on a dark wallpaper" width="82%">
+      <br>
+      <sub>Dark wallpaper profile with the same Windows-like launcher treatment.</sub>
+    </td>
+  </tr>
+</table>
 
-#### 🖼️ Wallpaper Selector
+## Documentation
 
-Displays all images inside `~/.config/wallpapers` for easy selection.
+| Area | Link |
+| --- | --- |
+| Architecture Overview | [docs/architecture.md](docs/architecture.md) |
+| File Structure | [docs/file-structure.md](docs/file-structure.md) |
+| Theming Pipeline | [docs/theming-pipeline.md](docs/theming-pipeline.md) |
+| Scripts Reference | [docs/scripts.md](docs/scripts.md) |
 
-![Wallpaper Selector](assets/images/screenshot_2026-03-15_21-19-29.png)
+### Component Docs
 
-#### 🧩 Waybar Style Selector
-
-Switch between Waybar configs stored in `~/.config/waybar/custom styles`.
-
-<div align="center">
-
-![Waybar Selector](assets/images/screenshot_2026-03-15_21-23-07.png)
-
-</div>
-
-</details>
-
-For more detailed explanation on how Everything works check out
-
-## 📚 Documentation
-
-- [Architecture Overview](docs/architecture.md)
-- [File Structure](docs/file-structure.md)
-- [Theming Pipeline](docs/theming-pipeline.md)
-- [Scripts Reference](docs/scripts.md)
-
-### Components
-- [Waybar](docs/components/waybar.md)
-- [Rofi](docs/components/rofi.md)
-- [Hyprland](docs/components/hyprland.md)
-- [Kitty](docs/components/kitty.md)
-- [Fastfetch](docs/components/fastfetch.md)
-
+| Component | Link |
+| --- | --- |
+| Waybar | [docs/components/waybar.md](docs/components/waybar.md) |
+| Rofi | [docs/components/rofi.md](docs/components/rofi.md) |
+| Hyprland | [docs/components/hyprland.md](docs/components/hyprland.md) |
+| Kitty | [docs/components/kitty.md](docs/components/kitty.md) |
+| Fastfetch | [docs/components/fastfetch.md](docs/components/fastfetch.md) |
