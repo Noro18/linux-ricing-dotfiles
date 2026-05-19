@@ -1,0 +1,97 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = '''
+[░▒▓](color3)[󰣇](fg:#090c0c bg:color3)$username[](bg:color1 fg:color3)$directory[](fg:color1 bg:color2)$git_branch$git_status[](fg:color2 bg:color2)$nodejs$rust$golang$php[](fg:color2 bg:color0)$conda[ ](fg:color0)$line_break$character'''
+
+palette = 'colors'
+
+[palettes.colors]
+mustard = '#af8700' # example
+matugen-color1 = '#adc6ff'
+matugen-color2 = '#102f60'
+matugen-color3 = '#c4c6d0'
+matugen-color4 = '#1e1f25'
+matugen-color5 = '#102f60'
+matugen-color6 = '#102f60'
+matugen-color7 = '#111318'
+matugen-color8 = '#adc6ff'
+matugen-color9 = '#debcdf'
+matugen-color10 = '#001a41'
+matugen-color11 = '#2b4678'
+matugen-color12 = '#293041'
+color0 = 'black'
+color1 = 'red'
+color2 = 'green'
+color3 = 'yellow'
+color4 = 'blue'
+color5 = 'magenta'
+color6 = 'cyan'
+color7 = 'white'
+color8 = '#8bd5b5'
+color9 = '#a6cce0'
+color10 = '#002115'
+color11 = '#00513a'
+color12 = '#1f352b'
+
+
+[username]
+show_always = true
+style_user = "fg:#090c0c bg:color3 "
+style_root = "fg:#090c0c bg:color3 "
+format = "[ $user ]($style)"
+disabled = false
+
+
+[directory]
+style = "fg:color7 bg:color1"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:color2"
+format = '[ $symbol $branch ](fg:matugen-color7 bg:color2)'
+
+[git_status]
+style = "bg:color6"
+format = '[($all_status$ahead_behind )](fg:matugen-color7 bg:color2)'
+
+[nodejs]
+symbol = ""
+style = "bg:color11"
+format = '[[ $symbol ($version) ](fg:matugen-color7 bg:color2)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:color11"
+format = '[[ $symbol ($version) ](fg:matugen-color7 bg:color2)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:color11"
+format = '[[ $symbol ($version) ](fg:matugen-color7 bg:color2)]($style)'
+
+[php]
+symbol = ""
+style = "bg:color11"
+format = '[[ $symbol ($version) ](fg:matugen-color7 bg:color2)]($style)'
+
+[conda]
+symbol = " "
+style = "bg:color12"
+format = '[ $symbol$environment ](fg:#a0a9cb bg:color12)'
+ignore_base = false
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:color12"
+format = '[[  $time ](fg:#a0a9cb bg:color12)]($style)'
+
