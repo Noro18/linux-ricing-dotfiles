@@ -24,8 +24,8 @@ set = false
 arguments = ["img", "--transition-type", "center"]
 
 [templates.hyprland]
-input_path = '~/.config/matugen/templates/hyprland-colors.conf'
-output_path = '~/.config/hypr/colors/colors.conf'
+input_path = '~/.config/matugen/templates/hyprland-colors.lua'
+output_path = '~/.config/hypr/colors/colors.lua'
 post_hook = 'hyprctl reload'
 
 [templates.kitty]
@@ -58,8 +58,8 @@ input_path = '~/.config/matugen/templates/starship-colors.toml'
 output_path = '~/.config/starship.toml'
 
 [templates.chrome]
-input_path = '/home/noro18/.config/matugen/templates/chromium-theme.json'
-output_path = '/home/noro18/.config/chromium/Default/Extensions/Matugen-theme/manifest.json'
+input_path = '~/.config/matugen/templates/chromium-theme.json'
+output_path = '~/.config/chromium/Default/Extensions/Matugen-theme/manifest.json'
 
 # PywalFox bridge (for Zen Browser UI via PywalZen)
 # [templates.pywalfox]
@@ -76,7 +76,7 @@ output_path = '/home/noro18/.config/chromium/Default/Extensions/Matugen-theme/ma
 # Website colors (userContent.css)
 [templates.zen-colors]
 input_path  = "~/.config/matugen/templates/zen-colors.css"
-output_path = "/home/noro18/.zen/6ehkzul9.Default (release)/chrome/colors.css"
+output_path = "~/.zen/6ehkzul9.Default (release)/chrome/colors.css"
 
 [templates.pywalfox]
 input_path  = "~/.config/matugen/templates/pywalfox-colors.json"
