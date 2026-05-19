@@ -158,3 +158,4 @@ These captures show the desktop in regular use across different wallpapers, layo
 | Hyprland | [docs/components/hyprland.md](docs/components/hyprland.md) |
 | Kitty | [docs/components/kitty.md](docs/components/kitty.md) |
 | Fastfetch | [docs/components/fastfetch.md](docs/components/fastfetch.md) |
+| SwayNC | [docs/components/swaync.md](docs/components/swaync.md) |
