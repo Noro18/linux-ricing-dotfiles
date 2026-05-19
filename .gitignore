@@ -10,7 +10,6 @@ dotfiles/.config/swaync/colors-swaync.css
 dotfiles/.config/waybar/colors-waybar.css
 dotfiles/.config/waybar/colors.css
 dotfiles/.config/waybar/style.css
-dotfiles/.config/starship.toml
 dotfiles/.config/rofi/colors/colors-matugen.rasi
 
 # ============================================================
