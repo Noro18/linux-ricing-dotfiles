@@ -1,0 +1,18 @@
+[filetype]
+
+rules = [
+    { mime = "inode/directory", fg = "magenta" },
+]
+
+[icon]
+
+prepend_dirs = [
+    { name = "Desktop",   text = "", fg = "white" },
+    { name = "Downloads", text = "", fg = "white" },
+    { name = "Music",     text = "󰝚", fg = "cyan" },
+    { name = "Pictures",  text = "󰉏", fg = "magenta" },
+]
+
+prepend_conds = [
+    { if = "dir", text = "", fg = "blue" }
+]
