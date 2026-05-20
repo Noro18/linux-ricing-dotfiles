@@ -22,20 +22,20 @@ export PATH="$HOME/anaconda3/bin:/usr/local/bin:/usr/bin:$PATH"
 #hyprctl hyprpaper wallpaper "HDMI-A-1","$FILE"
 
 swww img "$FILE" \
-  --transition-type any \
-  --transition-duration 1.4 \
-  --transition-fps 60 \
-  --transition-step 50
+   --transition-type any \
+   --transition-duration 1.4 \
+   --transition-fps 60 \
+   --transition-step 50
 
-/home/noro18/anaconda3/bin/wal --saturate 0.5 -a 0.8 -i "$FILE"
+wal --saturate 0.5 -a 0.8 -i "$FILE"
 wallust run "$FILE"
 
-/home/noro18/.cargo/bin/matugen image "$FILE"
+matugen image "$FILE"
 # swaync-client -rs # uncomment this after fixing the dbus
 # pkill waybar
 # waybar &
 pywal_cava
-/home/noro18/Desktop/pywalium/generate.sh
+"$HOME/Desktop/pywalium/generate.sh"
 # Set wallpaper live
 
 # copy wallpaper to background for lock screen
