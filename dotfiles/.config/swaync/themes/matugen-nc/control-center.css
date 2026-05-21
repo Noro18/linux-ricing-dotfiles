@@ -7,11 +7,11 @@
 
 
 @define-color text                  @on_surface;
-@define-color background-alt  	    @surface_container_highest;
-@define-color background-alt-alpha  alpha(@surface_bright, .55);
-@define-color background-sec  	    alpha(@surface_container, 0.55);
+@define-color background-alt  	    @surface_container;
+@define-color background-alt-alpha  alpha(@surface_bright, 1);
+@define-color background-sec  	    alpha(@surface_container, 1);
 @define-color selected        	    @color7;
-@define-color accent                @tertiary;
+@define-color accent                @color5;
 @define-color text-alt              @surface;
 @define-color hover           	    alpha(@primary_container, .55);
 @define-color urgent          	    @error;
@@ -134,7 +134,7 @@
 
 /* Label widget */
 .widget-label {
-  margin: 6px 6px 6px 140px;
+  position: center;
   color: @accent;
 }
   
