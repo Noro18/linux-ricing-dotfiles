@@ -78,6 +78,10 @@ output_path = '/home/noro18/.config/chromium/Default/Extensions/Matugen-theme/ma
 input_path  = "~/.config/matugen/templates/zen-colors.css"
 output_path = "/home/noro18/.zen/6ehkzul9.Default (release)/chrome/colors.css"
 
+[templates.website]
+input_path  = "~/.config/matugen/templates/website-colors.css"
+output_path = "~/Webshowcase/colors.css"
+
 [templates.pywalfox]
 input_path  = "~/.config/matugen/templates/pywalfox-colors.json"
 output_path = "~/.config/matugen/generated/pywalfox-colors.json"
