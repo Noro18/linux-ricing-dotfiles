@@ -22,6 +22,8 @@ grad8="$color8"
 # Write them to the Cava config
 cat > "$HOME/.config/cava/config" <<EOF
 
+# This file is genreated from the command ~/.local/bin/pywal_cava so to change the colors change it there 
+
 [general]
 live-config = 1
 bar_spacing = 0
