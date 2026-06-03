@@ -4,8 +4,6 @@
 -- ╚══════════════════════════════════════╝
 
 -- ── Monitors ──────────────────────────────────────────────────────────
-dofile(os.getenv("HOME") .. "/.config/hypr/monitors.lua")
-
 -- ── Sources ───────────────────────────────────────────────────────────
 
 -- dofile(os.getenv("HOME") .. "/.config/hypr/colors/colors.lua")
@@ -66,29 +64,37 @@ hl.config({
 		gaps_in = 8,
 		gaps_out = 16,
 		layout = "dwindle",
-		border_size = 0
+		border_size = 0,
 	},
 
 	-- ── Decoration ────────────────────────────────────────────────────────
 	decoration = {
 		rounding = 12,
-		active_opacity = 0.99,
-		inactive_opacity = 0.96,
+		active_opacity = 0.89,
+		inactive_opacity = 0.85,
 
 		blur = {
 			enabled = true,
-			size = 2,
+			size = 4,
 			passes = 3,
-			new_optimizations = true,
 		},
+		--
+		-- motion_blur = {
+		-- 	enabled = true,
+		-- },
 
 		shadow = {
 			enabled = true,
-			range = 1,
-			render_power = 5,
+			range = 10,
+			render_power = 2,
 			sharp = false,
+			offset = { 0, 2 },
 			--    ignore_window = true,
 		},
+
+		-- motion_blur = {
+		-- 	enabled = true,
+		-- },
 	},
 })
 --Workspace overview swipe gesture
@@ -154,8 +160,7 @@ hl.layer_rule({ match = { namespace = "awww-daemon" }, animation = "fade" })
 -- layerrule = animation rofi_anim, rofi
 -- hl.layer_rule({  match = { namespace = ".*"}, blur_popups=true  })
 
-
-hl.curve("MySmooth", { type = "bezier", points = { {0.125, 0.706,}, {  0.245, 0.955 } } })
+hl.curve("MySmooth", { type = "bezier", points = { { 0.125, 0.706 }, { 0.245, 0.955 } } })
 hl.animation({ leaf = "layers", enabled = true, speed = 3, bezier = "MySmooth", style = "slide" })
 
 -- hl.layer_rule({
@@ -177,7 +182,6 @@ hl.window_rule({
 	no_focus = true,
 	rounding = 20,
 	decorate = true,
-
 })
 -- Desktop Editor
 hl.window_rule({
@@ -199,3 +203,6 @@ hl.window_rule({
 --[[
 dofile(os.getenv("HOME") ..  "/.config/hypr/hyprland-gui.conf")
 --]]
+
+require("monitors")
+require("workspaces")
