@@ -18,7 +18,6 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("hyprpm reload")
 	hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 	hl.exec_cmd("awww-daemon")
-	hl.exec_cmd("waypaper --restore")
 	-- hl.exec_cmd("wallset-backend ~/.config/wallpapers/f.")
 	hl.exec_cmd("start-waybar")
 	hl.exec_cmd("nm-applet --indicator")
@@ -61,8 +60,8 @@ hl.config({
 -- ── General ───────────────────────────────────────────────────────────
 hl.config({
 	general = {
-		gaps_in = 8,
-		gaps_out = 16,
+		gaps_in = 7,
+		gaps_out = 12,
 		layout = "dwindle",
 		border_size = 0,
 	},
@@ -70,6 +69,7 @@ hl.config({
 	-- ── Decoration ────────────────────────────────────────────────────────
 	decoration = {
 		rounding = 12,
+		rounding_power = 4.0,
 		active_opacity = 0.89,
 		inactive_opacity = 0.85,
 
@@ -78,15 +78,11 @@ hl.config({
 			size = 4,
 			passes = 3,
 		},
-		--
-		-- motion_blur = {
-		-- 	enabled = true,
-		-- },
 
 		shadow = {
 			enabled = true,
 			range = 10,
-			render_power = 2,
+			render_power = 1,
 			sharp = false,
 			offset = { 0, 2 },
 			--    ignore_window = true,
@@ -125,7 +121,7 @@ hl.config({
 	hl.curve("overshoot", { type = "bezier", points = { { 0, 1.6 }, { 0.28, 1 } } }),
 	hl.curve("smooth", { type = "bezier", points = { { 0.4, 0 }, { 0.2, 1 } } }),
 
-	hl.animation({ leaf = "windows", enabled = true, speed = 4, bezier = "default", style = "slide" }),
+	hl.animation({ leaf = "windows", enabled = true, speed = 5, bezier = "default", style = "slide" }),
 	hl.animation({ leaf = "workspaces", enabled = true, speed = 4, bezier = "default", style = "slidefade 90%" }),
 	-- hl.animation({ leaf = "layersIn", enabled = true, speed = 4, bezier = "smooth", style = "popin 10%" }),
 	-- hl.animation({ leaf = "layersOut", enabled = true, speed = 3, bezier = "smooth", style = "popin" }),
@@ -161,7 +157,7 @@ hl.layer_rule({ match = { namespace = "awww-daemon" }, animation = "fade" })
 -- hl.layer_rule({  match = { namespace = ".*"}, blur_popups=true  })
 
 hl.curve("MySmooth", { type = "bezier", points = { { 0.125, 0.706 }, { 0.245, 0.955 } } })
-hl.animation({ leaf = "layers", enabled = true, speed = 3, bezier = "MySmooth", style = "slide" })
+hl.animation({ leaf = "layers", enabled = true, speed = 4, bezier = "MySmooth", style = "popin" })
 
 -- hl.layer_rule({
 -- 	match = { namespace = "rofi" },
@@ -180,7 +176,6 @@ hl.window_rule({
 	},
 	float = true,
 	no_focus = true,
-	rounding = 20,
 	decorate = true,
 })
 -- Desktop Editor
