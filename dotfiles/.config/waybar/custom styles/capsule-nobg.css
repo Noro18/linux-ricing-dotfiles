@@ -8,9 +8,10 @@
     border-radius: 0;
     font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free";
     font-size: 14px;
+    font-weight: bold;
     margin: 0;
     padding: 0;
-    min-height: 1px;
+    min-height: 0px;
 }
 
 window#waybar {
@@ -23,12 +24,12 @@ window#waybar {
 
 
 .modules-center {
-    background-color: @surface_container;
+    background-color: @surface_container_lowest;
     border-radius: 20px;
 }
 
 .modules-right{
-    background-color: @surface_container;
+    background-color: @surface_container_lowest;
     border-radius: 20px;
     padding: 0px 12px;
     margin: 0px 4px;
@@ -44,7 +45,7 @@ window#waybar {
 #custom-power,
 #custom-weather,
 #custom-nix{
-    background-color: @surface_container;
+    background-color: @surface_container_lowest;
     border-radius: 20px;
     padding: 0px 12px;
     margin: 0px 5px;
@@ -62,16 +63,16 @@ window#waybar {
     padding: 0px 12px;
 }
 #custom-swaync {
-    color: @on_surface;
+    color: @color3;
     padding: 0px 12px;
 }
 
 #backlight {
     margin: 0px 5px;
-
     padding: 0px 12px;
 }
 #custom-light{
+    color: @color3;
     margin: 0px 0px;
 
 }
@@ -81,18 +82,21 @@ window#waybar {
 
 /* Workspaces */
 #workspaces {
-    padding: 0px 6px;
+    padding: 0px 10px;
     min-width: 20px;
     margin: 0px;
 
 }
 
 #workspaces button {
+    font-size: 16px;
+    font-weight: 900;
     min-width: 20px;
     /* padding: 0px 4px; */
-    margin: 5px 3px;
-    color: @surface_container_highest; /* Inactive workspace color */
-    background-color: @surface_container_highest;
+    padding-right: 2px;
+    margin: 5px 5px;
+    color: @surface_container_low; /* Inactive workspace color */
+    background-color: @surface_container_low;
     border-radius: 20px;
     transition:
         background 0.25s cubic-bezier(0.4, 0.0, 0.2, 1),
@@ -102,20 +106,27 @@ window#waybar {
 
 }
 #workspaces button.active {
+    font-size: 16px;
+    font-weight: 900;
     color: @on_primary_fixed;
-    background-color: @color4;
-    min-width: 50px;
+    background-color: @color5;
+    min-width: 55px;
+    padding-right: 2px;
     /* padding: 0px 8px; */
     box-shadow: 0 0 5px alpha(@primary, 0.0);
 }
 
 #workspaces button:hover {
+    font-size: 16px;
+    font-weight: 900;
     background-color: @color1;
     color: @foreground;
 }
 
 #workspaces button.urgent {
-    background-color: @color4;
+    font-size: 16px;
+    font-weight: 900;
+    background-color: @error;
     color: @background;
 }
 

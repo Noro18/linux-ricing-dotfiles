@@ -1,8 +1,10 @@
 {
     "layer": "top",
     "font": "JetBrains Nerd Font 10",
-    "margin": "10 8 -5 8",
+    "margin": "13 8 5 8",
     "reload_style_on_change": true,
+    "on-sigusr1": "hide",
+    "on-sigusr2": "show",
     "modules-left": [
         "custom/nix",
         "clock",
@@ -99,14 +101,17 @@
         }
     },
     "hyprland/workspaces": {
-        "format": "{id}",
+        "format": "{icon}",
+        "on-click": "activate",
         "format-icons": {
-            "active": "{id}",
-            "default": "",
-            "urgent": ""
+            "1": "󰭹",
+            "2": "󰈹",
+            "3": "󰅩",
+            "4": "󰙨",
+            "5": "󰚩"
         },
         "persistent-workspaces": {
-            "*": 6
+            "*": 5
         }
     },
     "hyprland/window": {
