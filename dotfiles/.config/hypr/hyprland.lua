@@ -7,7 +7,7 @@
 -- ── Sources ───────────────────────────────────────────────────────────
 
 -- dofile(os.getenv("HOME") .. "/.config/hypr/colors/colors.lua")
-dofile(os.getenv("HOME") .. "/.config/hypr/configurations/keybinds.lua")
+require("configurations.keybinds")
 
 -- ── Autostart ─────────────────────────────────────────────────────────
 hl.on("hyprland.start", function()
@@ -100,31 +100,32 @@ hl.config({
 -- workspace swipe gesture
 hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
 
--- hyprexpo plugin settings
+hl.plugin.hyprexpo.gesture({
+	fingers = 3,
+	direction = "up",
+	action = "expo",
+})
+
 hl.config({
-	--[[
+
 	plugin = {
-  	hyprexpo = {
-  			columns = 3
-        gap_size = 5
-        bg_col = $surface_container_low
-        skip_empty = true
-        workspace_method = current -- [center/first] [workspace] e.g. first 1 or center m+1
-  	}
-	}
-	--]]
+		hyprexpo = {
+			columns = 3,
+			gaps_in = 5,
+			gaps_out = 0,
+			bg_col = "rgb(111111)",
+			workspace_method = "center current",
+			gesture_distance = 200,
+			cancel_key = "escape",
+			show_cursor = 1,
+		},
+	},
 
 	-- ── Animations ────────────────────────────────────────────────────────
 	animations = {
 		enabled = true,
 	},
-	hl.curve("overshoot", { type = "bezier", points = { { 0, 1.6 }, { 0.28, 1 } } }),
-	hl.curve("smooth", { type = "bezier", points = { { 0.4, 0 }, { 0.2, 1 } } }),
 
-	hl.animation({ leaf = "windows", enabled = true, speed = 5, bezier = "default", style = "slide" }),
-	hl.animation({ leaf = "workspaces", enabled = true, speed = 4, bezier = "default", style = "slidefade 90%" }),
-	-- hl.animation({ leaf = "layersIn", enabled = true, speed = 4, bezier = "smooth", style = "popin 10%" }),
-	-- hl.animation({ leaf = "layersOut", enabled = true, speed = 3, bezier = "smooth", style = "popin" }),
 	-- ── Layout ────────────────────────────────────────────────────────────
 	dwindle = {
 		-- pseudotile     = true --discarded from hyprland v0.55 onwards
@@ -142,6 +143,14 @@ hl.config({
 		vrr = 0,
 	},
 })
+
+hl.curve("overshoot", { type = "bezier", points = { { 0, 1.6 }, { 0.28, 1 } } })
+hl.curve("smooth", { type = "bezier", points = { { 0.4, 0 }, { 0.2, 1 } } })
+
+hl.animation({ leaf = "windows", enabled = true, speed = 5, bezier = "default", style = "slide" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 4, bezier = "default", style = "slidefade 90%" })
+hl.animation({ leaf = "layersIn", enabled = true, speed = 4, bezier = "smooth", style = "popin " })
+hl.animation({ leaf = "layersOut", enabled = true, speed = 3, bezier = "smooth", style = "popin" })
 
 -- ── Layer Rules ───────────────────────────────────────────────────────
 hl.layer_rule({ match = { namespace = "rofi" }, blur = true, ignore_alpha = 0.7 })
@@ -189,15 +198,6 @@ hl.window_rule({
 	--    monitor = current
 	workspace = "unset",
 })
-
--- dofile(os.getenv("HOME") ..  /home/noro18/.config/hypr/plugins.conf
-
--- b = $mainMod SHIFT, P, exec, hyprctl layers > /tmp/layers.txt --maybe this can be a keybind?
-
--- HyprMod managed settings
---[[
-dofile(os.getenv("HOME") ..  "/.config/hypr/hyprland-gui.conf")
---]]
 
 require("monitors")
 require("workspaces")

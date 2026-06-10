@@ -10,7 +10,7 @@ local mainMod = "SUPER"
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd("kitty"))
 hl.bind(
 	mainMod .. " + ALT + RETURN",
-	hl.dsp.exec_cmd("paplay --volume=32768 '~/.config/hypr/config_Kitty-Efeckt_rezero_death.mp3' & kitty")
+	hl.dsp.exec_cmd("paplay --volume=32768 ~/.config/hypr/config_Kitty-Efeckt_rezero_death.mp3 & kitty")
 )
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(
@@ -24,7 +24,7 @@ hl.bind(mainMod .. " + ALT + J", hl.dsp.window.swap({ direction = "down" }))
 hl.bind(mainMod .. " + ALT + K", hl.dsp.window.swap({ direction = "up" }))
 hl.bind(mainMod .. " + ALT + L", hl.dsp.window.swap({ direction = "right" }))
 
-hl.bind("SUPER + G", function()
+hl.bind("SUPER + TAB", function()
 	hl.plugin.hyprexpo.expo("toggle")
 end)
 
