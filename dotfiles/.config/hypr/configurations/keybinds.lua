@@ -81,20 +81,23 @@ hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("toggle-hyprsunset"))
 hl.bind(
 	"Print",
 	hl.dsp.exec_cmd(
-		'grim "$HOME/Pictures/screenshot_$(date +\'%Y-%m-%d_%H-%M-%S\')).png" && notify-send "📸 Screenshot saved!" "Saved to ~/Pictures"'
+		[[bash -c 'grim "$HOME/Pictures/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png" && notify-send "📸 Screenshot saved!" "Saved to ~/Pictures"']]
 	)
 )
+
 hl.bind(
 	"CTRL + PRINT",
 	hl.dsp.exec_cmd(
-		'grim -g "$(slurp)" "$HOME/Pictures/screenshot_$(date +\'%Y-%m-%d_%H-%M-%S\')).png && notify-send "📸 Screenshot saved!" "Area captured and saved to ~/Pictures"'
+		[[bash -c 'grim -g "$(slurp)" "$HOME/Pictures/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png" && notify-send "📸 Area screenshot saved!" "Saved to ~/Pictures"']]
 	)
 )
+
 hl.bind(
 	"ALT + PRINT",
-	hl.dsp.exec_cmd('grim -g "$(slurp))" - | swappy -f - && notify-send "🖊 Screenshot edited" "Opened in Swappy"')
+	hl.dsp.exec_cmd(
+		[[bash -c 'FILE="$HOME/Pictures/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png"; grim -g "$(slurp)" "$FILE" && swappy -f "$FILE" -o "$FILE"']]
+	)
 )
-
 -- ── Audio ─────────────────────────────────────────────────────────────
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("pamixer -i 5"))
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("pamixer -d 5"))
