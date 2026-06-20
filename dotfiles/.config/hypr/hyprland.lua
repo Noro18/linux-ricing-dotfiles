@@ -56,11 +56,10 @@ hl.config({
 		},
 	},
 })
-
 -- ── General ───────────────────────────────────────────────────────────
 hl.config({
 	general = {
-		gaps_in = 7,
+		gaps_in = 4,
 		gaps_out = 12,
 		layout = "dwindle",
 		border_size = 0,
@@ -70,8 +69,8 @@ hl.config({
 	decoration = {
 		rounding = 12,
 		rounding_power = 4.0,
-		active_opacity = 0.89,
-		inactive_opacity = 0.85,
+		active_opacity = 1,
+		inactive_opacity = 0.95,
 
 		blur = {
 			enabled = true,
@@ -80,12 +79,11 @@ hl.config({
 		},
 
 		shadow = {
-			enabled = true,
+			enabled = false,
 			range = 10,
 			render_power = 1,
 			sharp = false,
 			offset = { 0, 2 },
-			--    ignore_window = true,
 		},
 
 		-- motion_blur = {
@@ -100,11 +98,36 @@ hl.config({
 -- workspace swipe gesture
 hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
 
+-- Expo gesture for opening
+
 hl.plugin.hyprexpo.gesture({
 	fingers = 3,
 	direction = "up",
 	action = "expo",
 })
+
+-- Vim Motion binds for navigation
+
+hl.define_submap("hyprexpo", function()
+	hl.bind("h", function()
+		hl.plugin.hyprexpo.kb_focus("left")
+	end)
+	hl.bind("l", function()
+		hl.plugin.hyprexpo.kb_focus("right")
+	end)
+	hl.bind("k", function()
+		hl.plugin.hyprexpo.kb_focus("up")
+	end)
+	hl.bind("j", function()
+		hl.plugin.hyprexpo.kb_focus("down")
+	end)
+	hl.bind("return", function()
+		hl.plugin.hyprexpo.kb_confirm()
+	end)
+	hl.bind("escape", function()
+		hl.plugin.hyprexpo.expo("cancel")
+	end)
+end)
 
 hl.config({
 
@@ -114,10 +137,12 @@ hl.config({
 			gaps_in = 5,
 			gaps_out = 0,
 			bg_col = "rgb(111111)",
-			workspace_method = "center current",
+			workspace_method = "center first",
 			gesture_distance = 200,
 			cancel_key = "escape",
 			show_cursor = 1,
+			skip_empty = 0,
+			max_workspace = 10,
 		},
 	},
 
@@ -144,14 +169,15 @@ hl.config({
 	},
 })
 
+hl.curve("MySmooth", { type = "bezier", points = { { 0.125, 0.706 }, { 0.245, 0.955 } } })
 hl.curve("overshoot", { type = "bezier", points = { { 0, 1.6 }, { 0.28, 1 } } })
 hl.curve("smooth", { type = "bezier", points = { { 0.4, 0 }, { 0.2, 1 } } })
 
 hl.animation({ leaf = "windows", enabled = true, speed = 5, bezier = "default", style = "slide" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 4, bezier = "default", style = "slidefade 90%" })
-hl.animation({ leaf = "layersIn", enabled = true, speed = 4, bezier = "smooth", style = "popin " })
-hl.animation({ leaf = "layersOut", enabled = true, speed = 3, bezier = "smooth", style = "popin" })
-
+hl.animation({ leaf = "workspaces", enabled = true, speed = 4, bezier = "MySmooth", style = "slide" })
+hl.animation({ leaf = "layersIn", enabled = true, speed = 4, bezier = "smooth", style = "popin 10%" })
+hl.animation({ leaf = "layersOut", enabled = true, speed = 4, bezier = "smooth", style = "popin 10%" })
+hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 3, bezier = "MySmooth", style = "slidevert" })
 -- ── Layer Rules ───────────────────────────────────────────────────────
 hl.layer_rule({ match = { namespace = "rofi" }, blur = true, ignore_alpha = 0.7 })
 hl.layer_rule({ match = { namespace = "waybar" }, blur = true, ignore_alpha = 0 })
@@ -165,8 +191,7 @@ hl.layer_rule({ match = { namespace = "awww-daemon" }, animation = "fade" })
 -- layerrule = animation rofi_anim, rofi
 -- hl.layer_rule({  match = { namespace = ".*"}, blur_popups=true  })
 
-hl.curve("MySmooth", { type = "bezier", points = { { 0.125, 0.706 }, { 0.245, 0.955 } } })
-hl.animation({ leaf = "layers", enabled = true, speed = 4, bezier = "MySmooth", style = "popin" })
+hl.animation({ leaf = "layers", enabled = true, speed = 4, bezier = "MySmooth", style = "popin 10%" })
 
 -- hl.layer_rule({
 -- 	match = { namespace = "rofi" },
@@ -197,6 +222,24 @@ hl.window_rule({
 	center = true,
 	--    monitor = current
 	workspace = "unset",
+})
+
+hl.window_rule({
+	workspace = "special:notes",
+	border_color = "rgb(f6c177)",
+	border_size = 2,
+})
+
+hl.window_rule({
+	workspace = "special:term",
+	border_color = "rgb(9ccfd8)",
+	border_size = 2,
+})
+
+hl.window_rule({
+	workspace = "special:browser",
+	border_color = "rgb(eb6f92)",
+	border_size = 2,
 })
 
 require("monitors")
