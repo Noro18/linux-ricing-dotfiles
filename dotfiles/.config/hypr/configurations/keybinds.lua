@@ -23,12 +23,38 @@ hl.bind(mainMod .. " + ALT + H", hl.dsp.window.swap({ direction = "left" }))
 hl.bind(mainMod .. " + ALT + J", hl.dsp.window.swap({ direction = "down" }))
 hl.bind(mainMod .. " + ALT + K", hl.dsp.window.swap({ direction = "up" }))
 hl.bind(mainMod .. " + ALT + L", hl.dsp.window.swap({ direction = "right" }))
-
 hl.bind("SUPER + TAB", function()
 	hl.plugin.hyprexpo.expo("toggle")
 end)
 
-hl.bind(mainMod .. " + F1", hl.dsp.exec_cmd("hyprctl layers > /tmp/hypr_layers.txt"))
+-- Toggle special workspaces
+hl.bind(mainMod .. " + COMMA", hl.dsp.workspace.toggle_special("notes"))
+
+hl.bind(mainMod .. " + PERIOD", hl.dsp.workspace.toggle_special("term"))
+
+hl.bind(mainMod .. " + SLASH", hl.dsp.workspace.toggle_special("browser"))
+
+-- Move focused window to special workspace
+hl.bind(mainMod .. " + SHIFT + COMMA", function()
+	hl.dispatch(hl.dsp.window.move({
+		workspace = "special:notes",
+		follow = false,
+	}))
+end)
+
+hl.bind(mainMod .. " + SHIFT + PERIOD", function()
+	hl.dispatch(hl.dsp.window.move({
+		workspace = "special:term",
+		follow = false,
+	}))
+end)
+
+hl.bind(mainMod .. " + SHIFT + SLASH", function()
+	hl.dispatch(hl.dsp.window.move({
+		workspace = "special:browser",
+		follow = false,
+	}))
+end)
 
 -- ── Applications ──────────────────────────────────────────────────────
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("thunar"))
