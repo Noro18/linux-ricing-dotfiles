@@ -79,7 +79,7 @@ hl.config({
 		},
 
 		shadow = {
-			enabled = false,
+			enabled = true,
 			range = 10,
 			render_power = 1,
 			sharp = false,
