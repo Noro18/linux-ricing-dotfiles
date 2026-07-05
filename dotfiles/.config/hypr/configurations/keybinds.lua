@@ -72,7 +72,7 @@ hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("pkill rofi || wallset"))
 hl.bind(mainMod .. " + ALT + W", hl.dsp.exec_cmd("pkill rofi || wallset-dark"))
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("pkill rofi || waybar-menu"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("pkill rofi || ~/.config/rofi/applets/bin/powermenu.sh"))
-hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("rofimoji")) --action copy"))
+hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("rofimoji --typer wtype --action type"))
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.exec_cmd("pkill rofi || focus-menu"))
 
 -- ── Layout (Dwindle)) ──────────────────────────────────────────────────
