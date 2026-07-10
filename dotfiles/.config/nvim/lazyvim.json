@@ -1,6 +1,8 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.lang.python"
+    "lazyvim.plugins.extras.lang.kotlin",
+    "lazyvim.plugins.extras.lang.python",
+    "lazyvim.plugins.extras.lang.tex"
   ],
   "install_version": 8,
   "news": {
