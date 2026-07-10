@@ -16,7 +16,7 @@
   color: @text;
   all: unset;
   font-size: 16px;
-  font-family: "GeistMono Nerd Font Propo";
+  font-family: "Segoe Ui", sans-serif;
   transition: 200ms;
 
 }
