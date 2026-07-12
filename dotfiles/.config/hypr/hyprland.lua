@@ -12,6 +12,8 @@ require("configurations.keybinds")
 -- ── Autostart ─────────────────────────────────────────────────────────
 hl.on("hyprland.start", function()
 	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=Hyprland")
+	hl.exec_cmd("/usr/lib/xdg-desktop-portal-hyprland &")
+	hl.exec_cmd("/usr/lib/xdg-desktop-portal &")
 	hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 	hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1")
 	hl.exec_cmd("/usr/bin/gnome-keyring-daemon --start --components=secrets")
