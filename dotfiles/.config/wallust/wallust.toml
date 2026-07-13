@@ -1,11 +1,12 @@
-check_contrast = true 
-# saturation = 0
+check_contrast = true
 
 #
 # palette = "light"
 backend="wal"
 
 color_space = "lch"
+
+palette = "dark"
 
 [templates]
 
