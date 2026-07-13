@@ -22,9 +22,9 @@ hide_window_decorations     yes
 background_opacity          1
 dynamic_background_opacity  no
 confirm_os_window_close     0
-# selection_foreground        none
+selection_foreground        none
 scrollbar                   never
-# selection_background        none
+selection_background        none
 cursor_trail 1
 cursor_trail_decay 0.1 0.9
 cursor_trail_start_threshold 0
@@ -47,6 +47,3 @@ include ~/.cache/wallust/colors-kitty.conf
 # Include Custom Configuration
 # Create the file custom.conf in ~/.config/kitty to overwrite the default configuration
 # include ./custom.conf
-
-
-
